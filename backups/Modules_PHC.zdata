@@ -1,0 +1,3767 @@
+schema Modules;
+
+// -------------------------------------------------- PHC STEERING AND WEAPONS --------------------------------------------------
+
+// -------------------- PHC HQ (Nexus) --------------------
+
+// ---------- PHC HQ Primary Weapon (4 Laser Turrets) ----------
+
+export ModuleTemplate WEP_PHC_HQ_01_P01 =
+{
+    .templateID              = "WEP_PHC_HQ_01_P01",
+    .name                    = "TXT_WEP_PHC_HQ_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_HQ_01_P01_DESC",			
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 1.0,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.5,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 2.10,
+        .firingArcPitchClamp              = 1.70,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_PHC_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FX_FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High, // Defensive Building
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+export ModuleTemplate WEP_PHC_HQ_01_P02 =
+{
+    .templateID              = "WEP_PHC_HQ_01_P02",
+    .name                    = "TXT_WEP_PHC_HQ_01_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_HQ_01_P02_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 1.0,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.5,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 2.10,
+        .firingArcPitchClamp              = 1.70,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_PHC_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_02",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_02",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FX_FireNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+export ModuleTemplate WEP_PHC_HQ_01_P03 =
+{
+    .templateID              = "WEP_PHC_HQ_01_P03",
+    .name                    = "TXT_WEP_PHC_HQ_01_P03_NAME",
+    .description         	 = "TXT_WEP_PHC_HQ_01_P03_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 1.0,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.5,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 2.10,
+        .firingArcPitchClamp              = 1.70,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_PHC_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_03",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_03",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FX_FireNode_03",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+export ModuleTemplate WEP_PHC_HQ_01_P04 =
+{
+    .templateID              = "WEP_PHC_HQ_01_P04",
+    .name                    = "TXT_WEP_PHC_HQ_01_P04_NAME",
+    .description         	 = "TXT_WEP_PHC_HQ_01_P04_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 1.0,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.5,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 2.10,
+        .firingArcPitchClamp              = 1.70,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_PHC_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_04",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_04",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FX_FireNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC HQ Secondary Weapon (Top 360 Turret) ----------
+
+export ModuleTemplate WEP_PHC_HQ_01_S01 =
+{
+    .templateID              = "WEP_PHC_HQ_01_S01",
+    .name                    = "TXT_WEP_PHC_HQ_01_S01_NAME",
+    .description         	 = "TXT_WEP_PHC_HQ_01_S01_DESC",	
+    .activateFunction        = "BeamWeaponTurretWeaponActivate",
+    .updateFunction          = "BeamWeaponTurretWeaponUpdate",
+//  .moduleFlags             = WeaponModuleFlags.eScanning,	
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 1.25,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 3.00,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_PHC_HQ_01_Secondary",
+        .yawHash                          = "HQTop_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "HQTop_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FX_FireNode_05",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,   // Infantry
+            TargetPriorities.High,   // Armor
+            TargetPriorities.High,   // Small Mecha
+            TargetPriorities.High, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- PHC DEFENSE WEAPONS --------------------
+
+
+// ---------- PHC Defense Artillery Primary Weapon (Missile Barrage) ----------
+
+export ModuleTemplate WEP_PHC_Defense_Artillery_01_P01 =
+{
+    .templateID              = "WEP_PHC_Defense_Artillery_01_P01",
+    .name                    = "TXT_WEP_PHC_Defense_Artillery_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Defense_Artillery_01_P01_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "ArtilleryTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning | WeaponModuleFlags.eClampPitchUp | WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 6,
+        .durationOrInterpulseCooldown     = 0.33,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 3.14,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 3.14,                           // this has to pitch nearly vertical to hit anything close
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 100,
+        .maxFiringRange                   = 2500,
+        .maxScanRange                     = 2500,
+        .scatter                          = 125,			
+        .projectileName                   = "PRO_PHC_Defense_Artillery_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+            "FireNode_02",
+            "FireNode_03",
+            "FireNode_04",
+            "FireNode_05",
+            "FireNode_06",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- PHC Defense Artillery 02 Primary Weapon (Command Post - Missile Barrage) ----------
+
+export ModuleTemplate WEP_PHC_Defense_Artillery_02_P01 =
+{
+    .templateID              = "WEP_PHC_Defense_Artillery_02_P01",
+    .name                    = "TXT_WEP_PHC_Defense_Artillery_02_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Defense_Artillery_02_P01_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "ArtilleryTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning | WeaponModuleFlags.eClampPitchUp | WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 12,
+        .numPulsesPerFiring               = 6,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 3.14,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 3.14,                           // this has to pitch nearly vertical to hit anything close
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 100,
+        .maxFiringRange                   = 3500,
+        .maxScanRange                     = 3500,
+        .scatter                          = 125,			
+        .projectileName                   = "PRO_PHC_Defense_Artillery_02_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+            "FireNode_02",
+            "FireNode_03",
+            "FireNode_04",
+            "FireNode_05",
+            "FireNode_06",			
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+export ModuleTemplate WEP_PHC_Defense_Artillery_02_P02 =
+{
+    .templateID              = "WEP_PHC_Defense_Artillery_02_P02",
+    .name                    = "TXT_WEP_PHC_Defense_Artillery_02_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_Defense_Artillery_02_P02_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "ArtilleryTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning | WeaponModuleFlags.eClampPitchUp | WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 8,
+        .numPulsesPerFiring               = 6,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 3.14,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 3.14,                           // this has to pitch nearly vertical to hit anything close
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 100,
+        .maxFiringRange                   = 3500,
+        .maxScanRange                     = 3500,
+        .scatter                          = 125,			
+        .projectileName                   = "PRO_PHC_Defense_Artillery_02_Primary",
+        .yawHash                          = "Turret_Yaw_02",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_02",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_07",
+            "FireNode_08",
+            "FireNode_09",
+            "FireNode_10",
+            "FireNode_11",
+            "FireNode_12",	
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+export ModuleTemplate WEP_PHC_Defense_Artillery_02_P03 =
+{
+    .templateID              = "WEP_PHC_Defense_Artillery_02_P03",
+    .name                    = "TXT_WEP_PHC_Defense_Artillery_02_P03_NAME",
+    .description         	 = "TXT_WEP_PHC_Defense_Artillery_02_P03_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "ArtilleryTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning | WeaponModuleFlags.eClampPitchUp | WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 8,
+        .numPulsesPerFiring               = 6,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 3.14,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 3.14,                           // this has to pitch nearly vertical to hit anything close
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 100,
+        .maxFiringRange                   = 3500,
+        .maxScanRange                     = 3500,
+        .scatter                          = 125,			
+        .projectileName                   = "PRO_PHC_Defense_Artillery_02_Primary",
+        .yawHash                          = "Turret_Yaw_03",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_03",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_13",
+            "FireNode_14",
+            "FireNode_15",
+            "FireNode_16",
+            "FireNode_17",
+            "FireNode_18",	
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Defense Direct Primary Weapon (Medium Railgun) ----------
+
+export ModuleTemplate WEP_PHC_Defense_Direct_01_P01 =
+{
+    .templateID              = "WEP_PHC_Defense_Direct_01_P01",
+    .name                    = "TXT_WEP_PHC_Defense_Direct_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Defense_Direct_01_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.31,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_PHC_Defense_Direct_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+             TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+       },
+    }
+};
+
+
+// ---------- PHC Defense AntiAir Primary Weapon (Quad Laser Bolt) ----------
+
+export ModuleTemplate WEP_PHC_Defense_AntiAir_01_P01 =
+{
+    .templateID              = "WEP_PHC_Defense_AntiAir_01_P01",
+    .name                    = "TXT_WEP_PHC_Defense_AntiAir_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Defense_AntiAir_01_P01_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning | WeaponModuleFlags.eAntiAir,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 4,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.03,
+        .firingArcPitch                   = 0.03,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 2.35, 
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2200,
+        .maxScanRange                     = 2200,
+        .projectileName                   = "PRO_PHC_Defense_AntiAir_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret		
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+            "FireNode_02",
+            "FireNode_03",
+            "FireNode_04", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Normal, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Swarm 01 (Brute) --------------------
+
+// ---------- PHC Swarm 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Swarm_01 =
+{
+    .templateID                = "STE_PHC_Swarm_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 150,
+        .maxFiringRange                   = 650,
+        .maxScanRange                     = 1150,
+		.prefFiringRange				  = 0.5, // 0.7 is default					
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Swarm 01 Primary Weapon (Light Railgun) ----------
+
+export ModuleTemplate WEP_PHC_Swarm_01_Primary =
+{
+    .templateID              = "WEP_PHC_Swarm_01_Primary",
+    .name                    = "TXT_WEP_PHC_Swarm_01_Primary_NAME",
+    .description         	 = "TXT_WEP_PHC_Swarm_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 1,   // beam weapons should only do one
+        .durationOrInterpulseCooldown     = 0.0, // this is a beam weapon, so it is duration
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 750,
+        .maxScanRange                     = 850,
+        .projectileName                   = "PRO_PHC_Swarm_01_Primary",
+        .yawHash                          = "PHC_SpiderTank_Rig_Gun_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_SpiderTank_Rig_Gun_Pitch_AuxSHJnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- PHC Support 01 (Archer) --------------------
+
+// ---------- PHC Support 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Support_01 =
+{
+    .templateID                = "STE_PHC_Support_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 200,
+        .maxFiringRange                   = 1000,
+        .maxScanRange                     = 1500, // a good rule of thumb for this is maxFiringRange + leash distance of element
+		.prefFiringRange				  = 0.8, // 0.7 is default					
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- PHC Support 01 Primary Weapon (Rapid-Fire Missiles) ----------
+
+export ModuleTemplate WEP_PHC_Support_01_Primary =
+{
+    .templateID              = "WEP_PHC_Support_01_Primary",
+    .name                    = "TXT_WEP_PHC_Support_01_Primary_NAME",
+    .description         	 = "TXT_WEP_PHC_Support_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 6,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.31,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1100,
+        .maxScanRange                     = 1200,
+        .projectileName                   = "PRO_PHC_Support_01_Primary",
+        .yawHash                          = "PHC_SpiderTank_Rig_Gun_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_SpiderTank_Rig_Gun_Pitch_AuxSHJnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+			"FireNode_02",
+            "FireNode_03",
+            "FireNode_04",
+            "FireNode_05",
+            "FireNode_06",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- PHC Recon 01 (Hermes Recon Mech) --------------------
+
+export ModuleTemplate STE_PHC_Recon_01 =
+{
+    .templateID             = "STE_PHC_Recon_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.309,
+        .firingArcTurnRate                = 3.14, // generally faster than the unit can turn
+        .minFiringRange                   = 150,
+        .maxFiringRange                   = 750,
+        .maxScanRange                     = 1150,
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",		
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- PHC Recon 01 Torso ----------
+
+export ModuleTemplate WEP_PHC_Recon_01_Torso =
+{
+    .templateID              = "WEP_PHC_Recon_01_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 850,
+        .maxScanRange                     = 950,
+        .projectileName                   = "PRO_PHC_Recon_01_Primary", // Projectile used for leading shots
+        .yawHash                          = "PHC_Armor1_Rig_Torso_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Recon 01 Primary Weapon (Dual Arm Lasers) ----------
+
+export ModuleTemplate WEP_PHC_Recon_01_P01 =
+{
+    .templateID              = "WEP_PHC_Recon_01_P01",
+    .name                    = "TXT_WEP_PHC_Recon_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Recon_01_P01_DESC",		
+    .activateFunction        = "BeamWeaponTurretWeaponActivate",
+    .updateFunction          = "BeamWeaponTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 1.5,
+        .numPulsesPerFiring               = 1,   // beam weapons should only do one
+        .durationOrInterpulseCooldown     = 0.75, // this is a beam weapon, so it is duration
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 750,
+        .maxScanRange                     = 850,
+        .projectileName                   = "PRO_PHC_Recon_01_Primary",
+        .yawHash                          = "PHC_Armor1_Rig_r_Arm_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Armor1_Rig_Arm_r_Pitch_AuxSHJnt", // the named node in the model that corresponds to the pitch of this turret
+        .startOfFiringFXHash              = "FX_MuzzleFlash_NEU_GenericBeam",
+        .startOfFiringLifeTime            = 0.25,
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+export ModuleTemplate WEP_PHC_Recon_01_P02 =
+{
+    .templateID              = "WEP_PHC_Recon_01_P02",
+    .name                    = "TXT_WEP_PHC_Recon_01_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_Recon_01_P02_DESC",	
+    .activateFunction        = "BeamWeaponTurretWeaponActivate",
+    .updateFunction          = "BeamWeaponTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 1.5,
+        .numPulsesPerFiring               = 1,   // beam weapons should only do one
+        .durationOrInterpulseCooldown     = 0.75, // this is a beam weapon, so it is duration
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 750,
+        .maxScanRange                     = 850,
+        .projectileName                   = "PRO_PHC_Recon_01_Primary", 
+        .yawHash                          = "PHC_Armor1_Rig_l_Arm_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Armor1_Rig_Arm_l_Pitch_AuxSHJnt", // the named node in the model that corresponds to the pitch of this turret
+        .startOfFiringFXHash              = "FX_MuzzleFlash_NEU_GenericBeam",
+        .startOfFiringLifeTime            = 0.25,
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Armor 01 (Zeus Hover Tank) Modules --------------------
+
+// ---------- PHC Armor 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Armor_01 =
+{
+    .templateID                = "STE_PHC_Armor_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 150,
+        .maxFiringRange                   = 700,
+        .maxScanRange                     = 1150, // Slight larger than normal
+		.prefFiringRange				  = 0.7,					
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,   // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Armor 01 Primary Weapon (Dual Thunderbolt Projectors) ----------
+
+export ModuleTemplate WEP_PHC_Armor_01_Primary =
+{
+    .templateID              = "WEP_PHC_Armor_01_Primary",
+    .name                    = "TXT_WEP_PHC_Armor_01_Primary_NAME",
+    .description         	 = "TXT_WEP_PHC_Armor_01_Primary_DESC",		
+    .activateFunction        = "PlasmaWhipTurretWeaponActivate",
+    .updateFunction          = "PlasmaWhipTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eLinkedFire,	
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 1,   // arc weapons should only do one as they are DOTs
+        .durationOrInterpulseCooldown     = 1.0, // this is an arc weapon, so it is duration not interpulse cooldown
+        .firingArcYaw                     = 0.43, // 25 Degree Arc for sweep 
+        .firingArcPitch                   = 0.52, // 30 Degree Pitch
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 900,
+        .maxScanRange                     = 1000,
+        .projectileName                   = "PRO_PHC_Armor_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01", // the named node in the model that corresponds to the pitch of this turret
+        .startOfFiringFXHash              = "FX_MuzzleFlash_NEU_GenericBeam",
+        .startOfFiringLifeTime            = 0.25,
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01", "FireNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,   // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+
+// -------------------- PHC Sniper 01 (Nemesis) --------------------
+
+// ---------- PHC Sniper 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Sniper_01 =
+{
+    .templateID                = "STE_PHC_Sniper_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+		.minFiringRange                   = 150,
+        .maxFiringRange                   = 1200, 
+        .maxScanRange                     = 1600,
+		.prefFiringRange				  = 0.85, // 0.7 is default					
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Sniper 01 Torso ----------
+
+export ModuleTemplate WEP_PHC_Sniper_01_Torso =
+{
+    .templateID              = "WEP_PHC_Sniper_01_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .moduleFlags             = WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Sniper_01_Primary", // Projectile used for leading shots
+        .yawHash                          = "PHC_Sniper_Rig_Torso_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Sniper 01 Primary Weapon (Railgun) ----------
+
+export ModuleTemplate WEP_PHC_Sniper_01_Primary =
+{
+    .templateID              = "WEP_PHC_Sniper_01_Primary",
+    .name                    = "TXT_WEP_PHC_Sniper_01_Primary_NAME",
+    .description         	 = "TXT_WEP_PHC_Sniper_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4.0,
+        .numPulsesPerFiring               = 1,   // beam weapons should only do one
+        .durationOrInterpulseCooldown     = 0.125, // this is a beam weapon, so it is duration
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Sniper_01_Primary",
+        .yawHash                          = "PHC_Sniper_Rig_RightArm_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Sniper_Rig_RightArm_Pitch_AuxSHJnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Sniper 02 (Maverick) --------------------
+
+// ---------- PHC Sniper 02 Steering ----------
+
+export ModuleTemplate STE_PHC_Sniper_02 =
+{
+    .templateID                = "STE_PHC_Sniper_02",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 150,
+        .maxFiringRange                   = 1100,
+        .maxScanRange                     = 1600, // a good rule of thumb for this is maxFIringRange + leash distance of element
+		.prefFiringRange				  = 0.85, // 0.7 is default					
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Sniper 02 Torso ----------
+
+export ModuleTemplate WEP_PHC_Sniper_02_Torso =
+{
+    .templateID              = "WEP_PHC_Sniper_02_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .moduleFlags             = WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Sniper_02_Primary", // Projectile used for leading shots
+        .yawHash                          = "PHC_Maverick_Rig_Torso_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Sniper 02 Primary Weapons (Dual Arm Laser Bolts) ----------
+
+export ModuleTemplate WEP_PHC_Sniper_02_P01 =
+{
+    .templateID              = "WEP_PHC_Sniper_02_P01",
+    .name                    = "TXT_WEP_PHC_Sniper_02_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Sniper_02_P01_DESC",
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 1.0,
+        .numPulsesPerFiring               = 1,  
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 3.05,
+        .firingArcPitchClamp              = 1.05,
+        .firingArcTurnRate                = 2.1,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Sniper_02_Primary",
+        .yawHash                          = "PHC_Maverick_Rig_RightArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Maverick_Rig_RightArm_Pitch_02_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret 
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_01", "ProjectileNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+export ModuleTemplate WEP_PHC_Sniper_02_P02 =
+{
+    .templateID              = "WEP_PHC_Sniper_02_P02",
+    .name                    = "TXT_WEP_PHC_Sniper_02_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_Sniper_02_P02_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 1.0,
+        .numPulsesPerFiring               = 1,  
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 3.05,
+        .firingArcPitchClamp              = 1.05,
+        .firingArcTurnRate                = 2.1,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Sniper_02_Primary",
+        .yawHash                          = "PHC_Maverick_Rig_LeftArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Maverick_Rig_LeftArm_Pitch_01_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret			
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_05", "ProjectileNode_06",
+        },
+        .targetPriorityByCategory =
+        {
+			TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Artillery 01 (Artemis) --------------------
+
+// ---------- PHC Artillery 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Artillery_01 =
+{
+    .templateID                = "STE_PHC_Artillery_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+		.minFiringRange                   = 400,
+        .maxFiringRange                   = 1600,
+        .maxScanRange                     = 2000,
+		.prefFiringRange				  = 0.85, // 0.7 is default					
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,   // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Artillery 01 Torso ----------
+
+export ModuleTemplate WEP_PHC_Artillery_01_Torso =
+{
+    .templateID              = "WEP_PHC_Artillery_01_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .moduleFlags             = WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .projectileName                   = "PRO_PHC_Artillery_01_Primary", // Projectile used for leading shots
+        .yawHash                          = "PHC_Artillary_Rig_Torso_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,   // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Artillery 01 Primary Weapons (Bombardment Missiles) ----------
+
+export ModuleTemplate WEP_PHC_Artillery_01_Primary =
+{
+    .templateID              = "WEP_PHC_Artillery_01_Primary",
+    .name                    = "TXT_WEP_PHC_Artillery_01_Primary_NAME",
+    .description         	 = "TXT_WEP_PHC_Artillery_01_Primary_DESC",
+    .activateFunction        = "",
+    .updateFunction          = "ArtilleryTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eClampPitchUp | WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 3,
+        .durationOrInterpulseCooldown     = 0.30,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 3.14,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 100,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .scatter                          = 125.0,                          // random scatter added to the projectile target location to simulate inaccuracy (and spread the damage a bit)
+        .projectileName                   = "PRO_PHC_Artillery_01_Primary",
+        .yawHash                          = "PHC_Artillary_Rig_RightArm_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Artillary_Rig_RightArm_Pitch_AuxSHJnt",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01", "FireNode_02", "FireNode_03",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,   // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- PHC AntiAir 01 (Apollo) --------------------
+
+// ---------- PHC AntiAir 01 Steering ----------
+
+export ModuleTemplate STE_PHC_AntiAir_01 =
+{
+    .templateID                = "STE_PHC_AntiAir_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 150,
+        .maxFiringRange                   = 1100,
+        .maxScanRange                     = 1600, // a good rule of thumb for this is maxFIringRange + leash distance of element
+        .prefFiringRange                  = 0.6, // 0.7 is default					
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC AntiAir 01 Torso ----------
+
+export ModuleTemplate WEP_PHC_AntiAir_01_Torso =
+{
+    .templateID              = "WEP_PHC_AntiAir_01_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .moduleFlags             = WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1500,
+        .projectileName                   = "PRO_PHC_AntiAir_01_Primary", // Projectile used for leading shots
+        .yawHash                          = "PHC_Armor1_Rig_Torso_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC AntiAir 01 Primary Weapons (Dual Arm AntiAir Laser Bolts) ----------
+
+export ModuleTemplate WEP_PHC_AntiAir_01_P01 =
+{
+    .templateID              = "WEP_PHC_AntiAir_01_P01",
+    .name                    = "TXT_WEP_PHC_AntiAir_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_AntiAir_01_P01_DESC",
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 4,  
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = 3.14,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1500,
+        .projectileName                   = "PRO_PHC_AntiAir_01_Primary",
+        .yawHash                          = "PHC_Armor1_Rig_r_Arm_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Armor1_Rig_Arm_r_Pitch_AuxSHJnt", // the named node in the model that corresponds to the pitch of this turret 
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01", "FireNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+export ModuleTemplate WEP_PHC_AntiAir_01_P02 =
+{
+    .templateID              = "WEP_PHC_AntiAir_01_P02",
+    .name                    = "TXT_WEP_PHC_AntiAir_01_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_AntiAir_01_P02_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 4,  
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = 3.14,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1500,
+        .projectileName                   = "PRO_PHC_AntiAir_01_Primary",
+        .yawHash                          = "PHC_Armor1_Rig_l_Arm_Yaw_AuxSHJnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Armor1_Rig_Arm_l_Pitch_AuxSHJnt", // the named node in the model that corresponds to the pitch of this turret			
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_03", "FireNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+			TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Commander 01 (Acolyte) --------------------
+
+// ---------- PHC Commander 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Commander_01 =
+{
+    .templateID                = "STE_PHC_Commander_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+		.minFiringRange                   = 150,
+        .maxFiringRange                   = 1100, 
+        .maxScanRange                     = 1500,  // Lower than normal
+        .prefFiringRange                  = 0.6, // 0.7 is default			
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 01 Torso ----------
+
+export ModuleTemplate WEP_PHC_Commander_01_Torso =
+{
+    .templateID              = "WEP_PHC_Commander_01_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1300,
+        .projectileName                   = "PRO_PHC_Sniper_01_Primary", // Projectile used for leading shots
+        .yawHash                          = "Commander02_Rig_Torso_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 01 Primary Weapon 01 (Laser Bolts - Right Arm) ----------
+
+export ModuleTemplate WEP_PHC_Commander_01_P01 =
+{
+    .templateID              = "WEP_PHC_Commander_01_P01",
+    .name                    = "TXT_WEP_PHC_Commander_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_01_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 3, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 1.04,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1300,
+        .projectileName                   = "PRO_PHC_Commander_01_Primary",
+        .yawHash                          = "Commander02_Rig_RightArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Commander02_Rig_RightArm_Pitch_02_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 01 Primary Weapon 02 (Laser Bolts - Left Arm) ----------
+
+export ModuleTemplate WEP_PHC_Commander_01_P02 =
+{
+    .templateID              = "WEP_PHC_Commander_01_P02",
+    .name                    = "TXT_WEP_PHC_Commander_01_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_01_P02_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 3, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 1.04,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1300,
+        .projectileName                   = "PRO_PHC_Commander_01_Primary",
+        .yawHash                          = "Commander02_Rig_LeftArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Commander02_Rig_LeftArm_Pitch_01_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Commander 02 --------------------
+
+// ---------- PHC Commander 02 Steering ----------
+
+export ModuleTemplate STE_PHC_Commander_02 =
+{
+    .templateID                = "STE_PHC_Commander_02",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+		.minFiringRange                   = 200,
+        .maxFiringRange                   = 1200, 
+        .maxScanRange                     = 1600, 
+        .prefFiringRange                  = 0.6, // 0.7 is default			
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 02 Torso ----------
+
+export ModuleTemplate WEP_PHC_Commander_02_Torso =
+{
+    .templateID              = "WEP_PHC_Commander_02_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .moduleFlags             = WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Commander_02_Primary", // Projectile used for leading shots
+        .yawHash                          = "Commander02_Rig_Torso_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 02 Primary 01 Weapon (Laser Bolts, Right Arm) ----------
+
+export ModuleTemplate WEP_PHC_Commander_02_P01 =
+{
+    .templateID              = "WEP_PHC_Commander_02_P01",
+    .name                    = "TXT_WEP_PHC_Commander_02_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_02_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 4, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 1.9,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Commander_02_Primary",
+        .yawHash                          = "Commander02_Rig_RightArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Commander02_Rig_RightArm_Pitch_02_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_03", "ProjectileNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- PHC Commander 02 Primary 02 Weapon (Laser Bolts, Left Arm) ----------
+
+export ModuleTemplate WEP_PHC_Commander_02_P02 =
+{
+    .templateID              = "WEP_PHC_Commander_02_P02",
+    .name                    = "TXT_WEP_PHC_Commander_02_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_02_P02_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 4, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 1.9,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Commander_02_Primary",
+        .yawHash                          = "Commander02_Rig_LeftArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Commander02_Rig_LeftArm_Pitch_01_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_01", "ProjectileNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 02 Secondary 01 Weapon (Laser Bolts, Anti-Air, Right Shoulder) ----------
+
+export ModuleTemplate WEP_PHC_Commander_02_S01 =
+{
+    .templateID              = "WEP_PHC_Commander_02_S01",
+    .name                    = "TXT_WEP_PHC_Commander_02_S01_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_02_S01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 2, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 1.9,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 3.05,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1400,
+        .maxScanRange                     = 1500,
+        .projectileName                   = "PRO_PHC_Commander_02_Secondary",
+        .yawHash                          = "Commander02_Rig_ShoulderTurret_Yaw_R_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Commander02_Rig_ShoulderTurret_Pitch_R_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_05",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Normal, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 02 Secondary 01 Weapon (Laser Bolts, Anti-Air, Left Shoulder) ----------
+
+export ModuleTemplate WEP_PHC_Commander_02_S02 =
+{
+    .templateID              = "WEP_PHC_Commander_02_S02",
+    .name                    = "TXT_WEP_PHC_Commander_02_S02_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_02_S02_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 2, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 1.9,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 3.05,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1400,
+        .maxScanRange                     = 1500,
+        .projectileName                   = "PRO_PHC_Commander_02_Secondary",
+        .yawHash                          = "Commander02_Rig_ShoulderTurret_Yaw_L_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Commander02_Rig_ShoulderTurret_Pitch_L_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_06",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Normal, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Commander 03 (Super / Giant Commander) --------------------
+
+// ---------- PHC Commander 03 Steering ----------
+
+export ModuleTemplate STE_PHC_Commander_03 =
+{
+    .templateID                = "STE_PHC_Commander_03",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+		.minFiringRange                   = 350,
+        .maxFiringRange                   = 1300, 
+        .maxScanRange                     = 1900,
+        .prefFiringRange                  = 0.6, // 0.7 is default			
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 03 Torso ----------
+
+export ModuleTemplate WEP_PHC_Commander_03_Torso =
+{
+    .templateID              = "WEP_PHC_Commander_03_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 3.14,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.04,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1900,
+        .projectileName                   = "PRO_PHC_Commander_03_Primary", // Projectile used for leading shots
+        .yawHash                          = "PHC_Commader03_Rig_Torso_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Low, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 03 Primary 01 Weapon (Laser Bolts, Right Arm) ----------
+
+export ModuleTemplate WEP_PHC_Commander_03_P01 =
+{
+    .templateID              = "WEP_PHC_Commander_03_P01",
+    .name                    = "TXT_WEP_PHC_Commander_03_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_03_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 4, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = 3.14,
+        .firingArcPitchClamp              = 0.52,
+        .firingArcTurnRate                = 0.78,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .projectileName                   = "PRO_PHC_Commander_03_Primary",
+        .yawHash                          = "PHC_Commader03_Rig_RightArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Commader03_Rig_RightArm_Pitch_02_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_03", "ProjectileNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- PHC Commander 03 Primary 02 Weapon (Laser Bolts, Left Arm) ----------
+
+export ModuleTemplate WEP_PHC_Commander_03_P02 =
+{
+    .templateID              = "WEP_PHC_Commander_03_P02",
+    .name                    = "TXT_WEP_PHC_Commander_03_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_03_P02_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 4, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = 3.14,
+        .firingArcPitchClamp              = 0.52,
+        .firingArcTurnRate                = 0.78,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .projectileName                   = "PRO_PHC_Commander_03_Primary",
+        .yawHash                          = "PHC_Commader03_Rig_LeftArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Commader03_Rig_LeftArm_Pitch_01_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_01", "ProjectileNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 03 Secondary 01 Weapon (Laser Bolts, Anti-Air, Right Shoulder) ----------
+
+export ModuleTemplate WEP_PHC_Commander_03_S01 =
+{
+    .templateID              = "WEP_PHC_Commander_03_S01",
+    .name                    = "TXT_WEP_PHC_Commander_03_S01_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_03_S01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 2, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = 1.9,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 3.05,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .projectileName                   = "PRO_PHC_Commander_03_Secondary",
+        .yawHash                          = "PHC_Commader03_Rig_ShoulderTurret_Yaw_R_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Commader03_Rig_ShoulderTurret_Pitch_R_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_05", "ProjectileNode_06",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Normal, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+// ---------- PHC Commander 03 Secondary 01 Weapon (Laser Bolts, Anti-Air, Left Shoulder) ----------
+
+export ModuleTemplate WEP_PHC_Commander_03_S02 =
+{
+    .templateID              = "WEP_PHC_Commander_03_S02",
+    .name                    = "TXT_WEP_PHC_Commander_03_S02_NAME",
+    .description         	 = "TXT_WEP_PHC_Commander_03_S02_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 2, 
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = 1.9,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 3.05,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .projectileName                   = "PRO_PHC_Commander_03_Secondary",
+        .yawHash                          = "PHC_Commader03_Rig_ShoulderTurret_Yaw_L_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "PHC_Commader03_Rig_ShoulderTurret_Pitch_L_Aux_SH_Jnt", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "ProjectileNode_07", "ProjectileNode_08",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Normal, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+// -------------------- PHC Gunship 01 (Talos) --------------------
+
+// ---------- PHC Gunship 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Gunship_01 =
+{
+    .templateID             = "STE_PHC_Gunship_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.2,
+        .minFiringRange                   = 400,
+        .maxFiringRange                   = 900, 
+        .maxScanRange                     = 1500,
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",		
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,  // Armor
+            TargetPriorities.Normal,  // Small Mecha
+            TargetPriorities.Normal,  // Big Mecha
+            TargetPriorities.Low,     // Air
+            TargetPriorities.Low,     // Drone
+            TargetPriorities.Ignore,  // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+// ---------- PHC Gunship 01 Primary Weapons (2x Laser Bolts) ----------
+
+export ModuleTemplate WEP_PHC_Gunship_01_P01 =
+{
+    .templateID              = "WEP_PHC_Gunship_01_P01",
+    .name                    = "TXT_WEP_PHC_Gunship_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Gunship_01_P01_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 3,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 3.14,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1000,
+        .maxScanRange                     = 1100,
+        .projectileName                   = "PRO_PHC_Gunship_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "", // the named node in the model that corresponds to the pitch of this turret		
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,  // Armor
+            TargetPriorities.Normal,  // Small Mecha
+            TargetPriorities.Normal,  // Big Mecha
+            TargetPriorities.Low,     // Air
+            TargetPriorities.Low,     // Drone
+            TargetPriorities.Ignore,  // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+export ModuleTemplate WEP_PHC_Gunship_01_P02 =
+{
+    .templateID              = "WEP_PHC_Gunship_01_P02",
+    .name                    = "TXT_WEP_PHC_Gunship_01_P02_NAME",
+    .description         	 = "TXT_WEP_PHC_Gunship_01_P02_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 3,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 3.14,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1000,
+        .maxScanRange                     = 1100,
+        .projectileName                   = "PRO_PHC_Gunship_01_Primary",
+        .yawHash                          = "Turret_Yaw_02",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "", // the named node in the model that corresponds to the pitch of this turret	
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_02", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,  // Armor
+            TargetPriorities.Normal,  // Small Mecha
+            TargetPriorities.Normal,  // Big Mecha
+            TargetPriorities.Low,     // Air
+            TargetPriorities.Low,     // Drone
+            TargetPriorities.Ignore,  // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+// -------------------- PHC Bomber 01 (Hades) --------------------
+
+// ---------- PHC Bomber 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Bomber_01 =
+{
+    .templateID             = "STE_PHC_Bomber_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 3.14,
+        .firingArcTurnRate                = 6.283185307, // generally faster than the unit can turn
+        .minFiringRange                   = 0,
+        .prefFiringRange                  = 0.0f, // we want to fly over the target
+        .maxFiringRange                   = 1400, // add a little in because of our altitude
+        .maxScanRange                     = 1700,
+        .projectileName                   = "PRO_PHC_Bomber_01_Primary",		
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, 	// Infantry
+            TargetPriorities.Normal,  	// Armor
+            TargetPriorities.Normal, 	// Small Mecha
+            TargetPriorities.Normal,  	// Big Mecha
+            TargetPriorities.Ignore,	// Air
+            TargetPriorities.Ignore,   	// Drone
+            TargetPriorities.Ignore,	// Projectile
+            TargetPriorities.Low,   	// Building
+            TargetPriorities.Normal,    // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- PHC Bomber 01 Primary Weapon (Bombs) ----------
+
+export ModuleTemplate WEP_PHC_Bomber_01_Primary =
+{
+    .templateID              = "WEP_PHC_Bomber_01_Primary",
+    .name                    = "TXT_WEP_PHC_Bomber_01_Primary_NAME",
+    .description         	 = "TXT_WEP_PHC_Bomber_01_Primary_DESC",
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 8,
+        .numPulsesPerFiring               = 2,
+        .durationOrInterpulseCooldown     = 0.5,
+        .firingArcYaw                     = 0.2,
+        .firingArcPitch                   = 0.2,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 6.10,
+        .firingArcTurnRate                = 6.10,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1500,
+        .maxScanRange                     = 1800,
+        .scatter                          = 125,			
+        .projectileName                   = "PRO_PHC_Bomber_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+            "FireNode_02", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, 	// Infantry
+            TargetPriorities.Normal,  	// Armor
+            TargetPriorities.Normal, 	// Small Mecha
+            TargetPriorities.Normal,  	// Big Mecha
+            TargetPriorities.Ignore,	// Air
+            TargetPriorities.Ignore,   	// Drone
+            TargetPriorities.Ignore,	// Projectile
+            TargetPriorities.Low,   	// Building
+            TargetPriorities.Normal,    // Defensive Building
+            TargetPriorities.Ignore,    // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Fighter 01 (Fury) --------------------
+
+// ---------- PHC Fighter 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Fighter_01 =
+{
+    .templateID             = "STE_PHC_Fighter_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.2,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1500,
+        .prefFiringRange                  = 0.0f, // get close in air-to-air battles
+        .targetPriorityByCategory =
+        {
+			TargetPriorities.Ignore,    // Infantry
+            TargetPriorities.Ignore,    // Armor
+            TargetPriorities.Ignore,    // Small Mecha
+            TargetPriorities.Ignore,    // Big Mecha
+            TargetPriorities.High,      // Air
+            TargetPriorities.Low,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Ignore,    // Building
+            TargetPriorities.Ignore,    // Defensive Building
+            TargetPriorities.Ignore,       // Worker
+        },
+    }
+};
+
+
+// ---------- PHC Fighter 01 Primary Weapon (DEPRECATED - Rapid-Fire Laser Bolts - Now Using Missiles) ----------
+
+export ModuleTemplate WEP_PHC_Fighter_01_Primary =
+{
+    .templateID              = "WEP_PHC_Fighter_01_Primary",
+    .name                    = "TXT_WEP_PHC_Fighter_01_Primary_NAME",
+    .description         	 = "TXT_WEP_PHC_Fighter_01_Primary_DESC",
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 8.0,
+        .numPulsesPerFiring               = 4,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = 1.57,      
+        .firingArcPitchClamp              = 1.57,  
+        .firingArcTurnRate                = 6.1,    
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Fighter_01_Primary",
+        .yawHash                          = "Turret_Yaw_01", 
+        .pitchHash                        = "Turret_Pitch_01",
+        .firingNodeHashes                 =  
+        {
+            "FireNode_01",
+            "FireNode_02", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,    // Infantry
+            TargetPriorities.Ignore,    // Armor
+            TargetPriorities.Ignore,       // Small Mecha
+            TargetPriorities.Ignore,       // Big Mecha
+            TargetPriorities.High,       // Air
+            TargetPriorities.Low,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Ignore,    // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- PHC Fighter 01 Secodary Weapon (Micro Missile Swarm) ----------
+
+export ModuleTemplate WEP_PHC_Fighter_01_Secondary =
+{
+    .templateID              = "WEP_PHC_Fighter_01_Secondary",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 6.0,
+        .numPulsesPerFiring               = 6,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 1.57,
+        .firingArcPitch                   = 1.57,
+        .firingArcYawClamp                = 0.0,      
+        .firingArcPitchClamp              = 0.0,      
+        .firingArcTurnRate                = 0.0,    
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_PHC_Fighter_01_Secondary",
+        .yawHash                          = "Turret_Yaw_01", 
+        .pitchHash                        = "Turret_Pitch_01",
+        .firingNodeHashes                 =  
+        {
+            "FireNode_01",
+            "FireNode_02", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,    // Infantry
+            TargetPriorities.Ignore,    // Armor
+            TargetPriorities.Ignore,       // Small Mecha
+            TargetPriorities.Ignore,       // Big Mecha
+            TargetPriorities.High,       // Air
+            TargetPriorities.Low,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Ignore,    // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// -------------------- PHC Airship 01 Modules --------------------
+
+// ---------- PHC Airship 01 Steering ----------
+
+export ModuleTemplate STE_PHC_Airship_01 =
+{
+    .templateID             = "STE_PHC_Airship_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.104719755,
+        .firingArcPitch                   = 0.104719755,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.05,
+        .firingArcTurnRate                = 6.283185307, // generally faster than the unit can turn
+        .minFiringRange                   = 500,
+        .maxFiringRange                   = 1400,
+        .maxScanRange                     = 1700,
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",		
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,    // Small Mecha
+            TargetPriorities.Normal,    // Big Mecha
+            TargetPriorities.Low,    // Air
+            TargetPriorities.Ignore,    // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Airship 01 Weapon Primary 01 (Big Laser Beam + Lightning))----------
+
+export ModuleTemplate WEP_PHC_Airship_01_P01 =
+{
+    .templateID              = "WEP_PHC_Airship_01_P01",
+    .name                    = "TXT_WEP_PHC_Airship_01_P01_NAME",
+    .description         	 = "TXT_WEP_PHC_Airship_01_P01_DESC",
+    .activateFunction        = "BeamWeaponTurretWeaponActivate",
+    .updateFunction          = "BeamWeaponTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 1.25,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = -1,
+		.firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1500,
+        .maxScanRange                     = 1600,
+        .projectileName                   = "PRO_PHC_Airship_01_Primary",
+        .yawHash                          = "MainTurret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "MainTurret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .startOfFiringFXHash              = "FX_MuzzleFlash_PHC_AirshipLightning",
+        .startOfFiringLifeTime            = 1.25,		
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FX_FireNode_GiantLaserBeam",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,    // Small Mecha
+            TargetPriorities.Normal,    // Big Mecha
+            TargetPriorities.Ignore,    // Air
+            TargetPriorities.Ignore,    // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- PHC Airship 01 SECONDARY Weapon Modules (Small Laser Bolt Turrets)----------
+
+// ---------- PHC Airship 01 Weapon Secondary BASE (Turret Template Data, Defaults to Top Turret Targeting) ----------
+
+WeaponModuleTemplate WEP_PHC_Airship_01_SBASE_TemplateData = 
+{
+    .cooldown                         = 3,
+    .numPulsesPerFiring               = 1,
+    .durationOrInterpulseCooldown     = 0.25,
+    .firingArcYaw                     = 0.01,
+    .firingArcPitch                   = 0.01,
+	.firingArcYawClamp                = 5.2,
+    .firingArcPitchClamp              = 3.14,
+	.firingArcTurnRate                = 1.57,
+	.minFiringRange                   = 0,
+	.maxFiringRange                   = 1500,
+	.maxScanRange                     = 1600,
+    .projectileName                   = "PRO_PHC_Airship_01_Secondary",
+    .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+    .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+    .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+    {
+        "FX_FireNode_01",
+    },
+    .targetPriorityByCategory =
+	{
+		TargetPriorities.Ignore, // Infantry
+		TargetPriorities.Ignore, // Armor
+		TargetPriorities.Ignore, // Small Mecha
+		TargetPriorities.Ignore, // Big Mecha
+		TargetPriorities.High, // Air
+		TargetPriorities.Low, // Drone
+		TargetPriorities.Ignore, // Projectile
+		TargetPriorities.Ignore, // Building
+		TargetPriorities.Ignore, // Defensive Building
+		TargetPriorities.Low, // Worker
+	},
+};
+
+ModuleTemplate WEP_PHC_Airship_01_SBASE = 
+{
+    .templateID              = "WEP_PHC_Airship_01_SBASE",
+    .name                  	 = "<WEP_PHC_Airship_01_SBASE>",
+    .description         	 = "<WEP_PHC_Airship_01_SBASE>",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = WEP_PHC_Airship_01_SBASE_TemplateData,
+};
+
+// ---------- PHC Airship 01 Weapon Secondary 01 (Top Secondary Weapon) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S01 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S01",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_01",               
+        .pitchHash          = "Turret_Pitch_01",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_01",
+        },	
+	}
+};
+
+// ---------- PHC Airship 01 Weapon Secondary 02 (Top Secondary Weapon) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S02 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S02",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_02",               
+        .pitchHash          = "Turret_Pitch_02",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_02",
+        },	
+	}
+};
+
+// ---------- PHC Airship 01 Weapon Secondary 03 (Top Secondary Weapon) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S03 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S03",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_03",               
+        .pitchHash          = "Turret_Pitch_03",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_03",
+        },	
+	}
+};
+
+// ---------- PHC Airship 01 Weapon Secondary 04 (Top Secondary Weapon) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S04 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S04",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_04",               
+        .pitchHash          = "Turret_Pitch_04",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_04",
+        },	
+	}
+};
+
+// ---------- PHC Airship 01 Weapon Secondary 05 (Top Secondary Weapon) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S05 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S05",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_05",               
+        .pitchHash          = "Turret_Pitch_05",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_05",
+        },	
+	}
+};
+
+// ---------- PHC Airship 01 Weapon Secondary 06 (Top Secondary Weapon) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S06 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S06",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_06",               
+        .pitchHash          = "Turret_Pitch_06",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_06",
+        },	
+	}
+};
+
+// ---------- PHC Airship 01 Weapon Secondary 07 (Top Secondary Weapon) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S07 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S07",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_07",               
+        .pitchHash          = "Turret_Pitch_07",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_07",
+        },	
+	}
+};
+
+// ---------- PHC Airship 01 Weapon Secondary 08 (Top Secondary Weapon) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S08 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S08",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_08",               
+        .pitchHash          = "Turret_Pitch_08",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_08",
+        },	
+	}
+};
+
+// ---------- PHC Airship 09 Weapon Secondary 09 (BOTTOM Secondary Weapon, Must Override Targeting) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S09 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S09",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+		.firingArcYawClamp                = -1,
+        .yawHash 			= "Turret_Yaw_09",               
+        .pitchHash          = "Turret_Pitch_09",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_09",
+        },
+		.targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+	},	
+};
+
+// ---------- PHC Airship 10 Weapon Secondary 10 (BOTTOM Secondary Weapon, Must Override Targeting) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S10 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S10",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+ 		.firingArcYawClamp                = -1,      
+		.yawHash 			= "Turret_Yaw_10",               
+        .pitchHash          = "Turret_Pitch_10",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_10",
+        },
+		.targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+	},	
+};
+
+// ---------- PHC Airship 11 Weapon Secondary 11 (BOTTOM Secondary Weapon, Must Override Targeting) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S11 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S11",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+ 		.firingArcYawClamp                = -1,      
+        .yawHash 			= "Turret_Yaw_11",               
+        .pitchHash          = "Turret_Pitch_11",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_11",
+        },
+		.targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+	},	
+};
+
+// ---------- PHC Airship 12 Weapon Secondary 12 (BOTTOM Secondary Weapon, Must Override Targeting) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S12 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S12",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+ 		.firingArcYawClamp                = -1,      
+        .yawHash 			= "Turret_Yaw_12",               
+        .pitchHash          = "Turret_Pitch_12",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_12",
+        },
+		.targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+	},	
+};
+
+// ---------- PHC Airship 13 Weapon Secondary 13 (BOTTOM Secondary Weapon, Must Override Targeting) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S13 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S13",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+ 		.firingArcYawClamp                = -1,      
+        .yawHash 			= "Turret_Yaw_13",               
+        .pitchHash          = "Turret_Pitch_13",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_13",
+        },
+		.targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+	},	
+};
+
+// ---------- PHC Airship 14 Weapon Secondary 14 (BOTTOM Secondary Weapon, Must Override Targeting) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S14 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S14",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+ 		.firingArcYawClamp                = -1,      
+        .yawHash 			= "Turret_Yaw_14",               
+        .pitchHash          = "Turret_Pitch_14",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_14",
+        },
+		.targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+	},	
+};
+
+// ---------- PHC Airship 15 Weapon Secondary 15 (BOTTOM Secondary Weapon, Must Override Targeting) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S15 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S15",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+ 		.firingArcYawClamp                = -1,      
+        .yawHash 			= "Turret_Yaw_15",               
+        .pitchHash          = "Turret_Pitch_15",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_15",
+        },
+		.targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+	},	
+};
+
+// ---------- PHC Airship 16 Weapon Secondary 16 (BOTTOM Secondary Weapon, Must Override Targeting) ----------
+
+export ModuleTemplate WEP_PHC_Airship_01_S16 = update(WEP_PHC_Airship_01_SBASE)
+{
+    .templateID              = "WEP_PHC_Airship_01_S16",
+    .templateData            = update(WEP_PHC_Airship_01_SBASE_TemplateData)
+	{
+ 		.firingArcYawClamp                = -1,      
+        .yawHash 			= "Turret_Yaw_16",               
+        .pitchHash          = "Turret_Pitch_16",          
+        .firingNodeHashes 	=  
+        {
+            "FX_FireNode_16",
+        },
+		.targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+	},	
+};
+
+// ---------------------------------------- PHC CONSTRUCTION ----------------------------------------
+
+export ModuleTemplate Con_PHC_HQ =
+{
+    .templateID             = "Con_PHC_HQ",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionList   = 
+        {
+            "BLD_PHC_Ore_01",
+            "BLD_PHC_Gas_01",
+            "BLD_PHC_Refinery_01",
+            "BLD_PHC_Amplifier_01",						
+			"BLD_PHC_Prod_Light_01",
+            "BLD_PHC_Prod_Medium_01",
+            "BLD_PHC_Prod_Heavy_01",
+            "BLD_PHC_Prod_Air_01",
+            "BLD_PHC_Prod_Super_01",			
+            "BLD_PHC_Direct_01",
+            "BLD_PHC_AntiAir_01",
+			"BLD_PHC_Artillery_01",
+			"BLD_PHC_Artillery_02",
+			"BLD_PHC_Radar_01",			
+            "BLD_PHC_Logistics_01",
+            "BLD_PHC_Tech_01",
+			"BLD_PHC_DEV_CON_ALL",
+        },
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+    },
+};
+
+export ModuleTemplate Con_PHC_Light =
+{
+    .templateID          = "Con_PHC_Light",
+    .name                = "TXT_CONSTRUCTION_PHC_LIGHT",
+    .description         = "TXT_CONSTRUCTION_PHC_LIGHT_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_PHC_Swarm_01",
+            "UNT_PHC_Support_01",
+            "UNT_PHC_Recon_01",								
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+
+    },
+};
+
+export ModuleTemplate Con_PHC_Light_Coordination =
+{
+    .templateID             = "Con_PHC_Light_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_PHC_Swarm_01",
+            "UNT_PHC_Support_01",			
+            "UNT_PHC_Recon_01",								
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+export ModuleTemplate Con_PHC_Med   =
+{
+    .templateID          = "Con_PHC_Med",
+    .name                = "TXT_CONSTRUCTION_PHC_MED",
+    .description         = "TXT_CONSTRUCTION_PHC_MED_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_PHC_Armor_01",
+            "UNT_PHC_AntiAir_01",
+			"UNT_PHC_Commander_01",						
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+ 
+    },
+};
+
+export ModuleTemplate Con_PHC_Med_Coordination =
+{
+    .templateID             = "Con_PHC_Med_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_PHC_Armor_01",
+            "UNT_PHC_AntiAir_01",
+			"UNT_PHC_Commander_01",						
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+export ModuleTemplate Con_PHC_Heavy =
+{
+    .templateID          = "Con_PHC_Heavy",
+    .name                = "TXT_CONSTRUCTION_PHC_HEAVY",
+    .description         = "TXT_CONSTRUCTION_PHC_HEAVY_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_PHC_Sniper_01",
+            "UNT_PHC_Artillery_01",
+            "UNT_PHC_Sniper_02",			
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+    },
+};
+
+export ModuleTemplate Con_PHC_Heavy_Coordination =
+{
+    .templateID             = "Con_PHC_Heavy_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_PHC_Sniper_01",
+            "UNT_PHC_Artillery_01",
+            "UNT_PHC_Sniper_02",			
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+export ModuleTemplate Con_PHC_Air   =
+{
+    .templateID          = "Con_PHC_Air",
+    .name                = "TXT_CONSTRUCTION_PHC_AIR",
+    .description         = "TXT_CONSTRUCTION_PHC_AIR_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_PHC_Gunship_01",
+            "UNT_PHC_Fighter_01",
+            "UNT_PHC_Bomber_01",
+            "UNT_PHC_Scout_01",			
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+    },
+};
+
+export ModuleTemplate Con_PHC_Air_Coordination =
+{
+    .templateID             = "Con_PHC_Air_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_PHC_Gunship_01",
+            "UNT_PHC_Fighter_01",
+            "UNT_PHC_Bomber_01",
+            "UNT_PHC_Scout_01",						
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+export ModuleTemplate Con_PHC_Super =
+{
+    .templateID          = "Con_PHC_Super",
+    .name                = "TXT_CONSTRUCTION_PHC_SUPER",
+    .description         = "TXT_CONSTRUCTION_PHC_SUPER_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_PHC_Commander_03",
+            "UNT_PHC_Airship_01",			
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+    },
+};
+
+export ModuleTemplate Con_PHC_Super_Coordination =
+{
+    .templateID             = "Con_PHC_Super_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_PHC_Commander_03",
+            "UNT_PHC_Airship_01",						
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+// ---------------------------------------- PHC RESOURCE ----------------------------------------
+
+export ModuleTemplate Res_PHC_HQ =
+{
+    .templateID             = "Res_PHC_HQ",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond =
+        {
+            [Players.Resource.Ore] = 8.0,
+            [Players.Resource.Tech] = 1.0,
+        },
+
+        .grant =
+        {
+            [Players.Resource.Ore] = 400,
+            [Players.Resource.Logistics] = 30,
+        },
+
+        .capacity =
+        {
+            [Players.Resource.Ore]       = 9999,
+            [Players.Resource.Gas]       = 9999,
+            [Players.Resource.Logistics] = 30,
+        },
+
+        .resourceFlags = ResourceModuleTemplateFlags.IsHQ,
+    },
+};
+
+export ModuleTemplate Res_PHC_Ore_Mine =
+{
+    .templateID             = "Res_PHC_Ore_Mine",
+    .name                   = "TXT_ORE_MINE",
+    .description            = "TXT_ORE_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Ore] = 2.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_PHC_Ore_Mine_Up =
+{
+    .templateID             = "Res_PHC_Ore_Mine_Up",
+    .name                   = "TXT_ORE_MINE_UP",
+    .description            = "TXT_ORE_MINE_UP_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Ore] = 3.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_PHC_Gas_Mine =
+{
+    .templateID             = "Res_PHC_Gas_Mine",
+    .name                   = "TXT_GAS_MINE",
+    .description            = "TXT_GAS_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Gas] = 2.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_PHC_Gas_Mine_Up =
+{
+    .templateID             = "Res_PHC_Gas_Mine_Up",
+    .name                   = "TXT_GAS_MINE_UP",
+    .description            = "TXT_GAS_MINE_UP_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Gas] = 3.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_PHC_Refinery =
+{
+    .templateID             = "Res_PHC_Refinery",
+    .name                   = "TXT_REFINERY_NAME",
+    .description            = "TXT_REFINERY_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+          [Players.Resource.Ore] = 1.0,          
+		  [Players.Resource.Gas] = 1.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_PHC_Amplifier =
+{
+    .templateID             = "Res_PHC_Amplifier",
+    .name                   = "TXT_AMPLIFIER_NAME",
+    .description            = "TXT_AMPLIFIER_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+          [Players.Resource.Ore] = 8.0,          
+		  [Players.Resource.Gas] = 8.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_PHC_Log   =
+{
+    .templateID             = "Res_PHC_Log",
+    .name                   = "TXT_GAS_MINE",
+    .description            = "TXT_GAS_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .grant = 
+        {
+            [Players.Resource.Logistics] = 30,
+        },
+
+        .capacity = 
+        {
+            [Players.Resource.Logistics] = 30,
+        },
+    },
+};
+
+export ModuleTemplate Res_PHC_Tech  =
+{
+    .templateID             = "Res_PHC_Tech",
+    .name                   = "TXT_TECH_MINE",
+    .description            = "TXT_TECH_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Tech] = 1.0,
+        }
+    },
+};
+
+// ---------------------------------------- PHC VISIBILITY ----------------------------------------
+
+export ModuleTemplate VIS_PHC =
+{
+    .templateID             = "VIS_PHC",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1500,
+        .RadarRadius = 0,
+    },
+};
+
+export ModuleTemplate VIS_PHC_HQ =
+{
+    .templateID             = "VIS_PHC_HQ",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .RegionEyesOnDistance   = 1,
+        .RadarRadius            = 3500,
+    },
+};
+
+export ModuleTemplate VIS_PHC_Radar =
+{
+    .templateID             = "VIS_PHC_Radar",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1500,
+        .RadarRadius = 4500,
+    },
+};
+
+export ModuleTemplate VIS_PHC_AntiAir =
+{
+    .templateID             = "VIS_PHC_AntiAir",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1300,
+        .RadarRadius = 2000,
+    },
+};
+
+export ModuleTemplate VIS_PHC_Artillery =
+{
+    .templateID             = "VIS_PHC_Artillery",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1300,
+        .RadarRadius = 3200,
+    },
+};
+
+export ModuleTemplate VIS_PHC_Defense =
+{
+    .templateID             = "VIS_PHC_Defense",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1300,
+    },
+};
+
+// ---------------------------------------- PHC MODIFIERS ----------------------------------------
+
+export ModuleTemplate MOD_PHC_Commander_01 =
+{
+    .templateID             = "MOD_PHC_Commander_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ArmyModifierActivate",
+    .updateFunction         = "ArmyModifierUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ArmyModifierModuleTemplate) 
+    {
+        .modifications = 
+        {
+            {
+                .attribute = GameCoreTypes.ModifierAttributes.DamageAmount,
+                .amount = 0.25,
+            },
+			// Damage Resistance Disabled For Now
+            //{
+            //    .attribute = GameCoreTypes.ModifierAttributes.DamageResistance,
+            //    .amount = 0.25,
+            //},
+        },
+    },
+};
+
+export ModuleTemplate MOD_PHC_Commander_02 =
+{
+    .templateID             = "MOD_PHC_Commander_02",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "RegionModifierActivate",
+    .updateFunction         = "RegionModifierUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(RegionModifierModuleTemplate) 
+    {
+        .modifications = 
+        {
+            {
+                .attribute = GameCoreTypes.ModifierAttributes.ProductionRate,
+                .amount = 0.25,
+            },
+			{
+                .attribute = GameCoreTypes.ModifierAttributes.CaptureRate,
+                .amount = 0.50,
+            },			
+        },
+    },
+};
+
+ModuleTemplate MOD_PHC_Refinery_BASE =
+{
+    .templateID             = "MOD_PHC_Refinery_BASE",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "RegionModifierActivate",
+    .updateFunction         = "RegionModifierUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(RegionModifierModuleTemplate) 
+    {
+        .modifications = 
+        {
+            {
+                .attribute = GameCoreTypes.ModifierAttributes.OrePerSecond,
+                .amount = 0.5,
+            },
+            {
+                .attribute = GameCoreTypes.ModifierAttributes.GasPerSecond,
+                .amount = 0.5,
+            },
+        },
+    },
+};
+
+export ModuleTemplate MOD_PHC_Refinery_01 = update(MOD_PHC_Refinery_BASE)
+{
+    .templateID = "MOD_PHC_Refinery_01",
+};
+
+export ModuleTemplate MOD_PHC_Refinery_02 = update(MOD_PHC_Refinery_BASE)
+{
+    .templateID = "MOD_PHC_Refinery_02",
+};
+
+ModuleTemplate MOD_PHC_Amplifier_BASE =
+{
+    .templateID             = "MOD_PHC_Amplifier_BASE",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "RegionModifierActivate",
+    .updateFunction         = "RegionModifierUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(RegionModifierModuleTemplate) 
+    {
+        .modifications = 
+        {
+            {
+                .attribute = GameCoreTypes.ModifierAttributes.OrePerSecond,
+                .amount = 1.5,
+            },
+            {
+                .attribute = GameCoreTypes.ModifierAttributes.GasPerSecond,
+                .amount = 1.5,
+            },
+        },
+    },
+};
+
+export ModuleTemplate MOD_PHC_Amplifier_01 = update(MOD_PHC_Amplifier_BASE)
+{
+    .templateID = "MOD_PHC_Amplifier_01",
+};
+
+
+

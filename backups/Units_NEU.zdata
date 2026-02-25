@@ -1,0 +1,70 @@
+schema Units;
+
+
+// ---------- NEU Swarm 01 (Skirmisher Vehicle) Unit ----------
+export UnitTemplate UNT_NEU_Swarm_01 =
+{
+    .templateHandle = "UNT_NEU_Swarm_01",
+    .formationTemplateID = "TankDiamond", // local formation of elements within the Unit
+    .templateFlags = UnitTemplateFlags.unbuildable,	
+    .roleFlags  = UnitRoleFlags.eSupport,
+    .oreCost    = 75,
+    .gasCost    = 0,
+    .timeCost   = 15,
+    .logCost    = 1,
+    .elements   = { "ELM_NEU_Swarm_01","ELM_NEU_Swarm_01","ELM_NEU_Swarm_01","ELM_NEU_Swarm_01", },
+};
+
+
+// ---------- NEU Armor 01 (Exterminator Small Mech) Unit ----------
+export UnitTemplate UNT_NEU_Armor_01 =
+{
+    .templateHandle = "UNT_NEU_Armor_01",
+    .formationTemplateID = "AADiamond", // local formation of elements within the Unit
+    .templateFlags = UnitTemplateFlags.unbuildable,	
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .oreCost    = 175,
+    .gasCost    = 0,
+    .timeCost   = 25,
+    .logCost    = 2,
+    .elements   = { "ELM_NEU_Armor_01", "ELM_NEU_Armor_01", "ELM_NEU_Armor_01", },
+};
+
+
+// ---------- NEU Armor 02 Element (Milton Heavy Mech / Guntank) ----------
+export UnitTemplate UNT_NEU_Armor_02 =
+{
+    .templateHandle = "UNT_NEU_Armor_02",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .templateFlags = UnitTemplateFlags.unbuildable,	
+    .roleFlags  = UnitRoleFlags.eHeavy,
+    .oreCost    = 300,
+    .gasCost    = 300,
+    .timeCost   = 45,
+    .logCost    = 2,
+    .elements   = { "ELM_NEU_Armor_02"},
+};
+
+// ---------- NEU Worker 01 Element ----------
+export UnitTemplate UNT_NEU_Worker_01 =
+{
+    .templateHandle = "UNT_NEU_Worker_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eWorker,
+    .timeCost   = 45,
+    .logCost    = 0,
+    .elements   = { "ELM_NEU_Worker_01"},
+};
+
+// ---------- NEU Radar Drone Element ----------
+export UnitTemplate UNT_NEU_Recon_01 =
+{
+    .templateHandle = "UNT_NEU_Recon_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eWorker,
+    .timeCost   = 45,
+    .logCost    = 2,
+    .elements   = { "ELM_NEU_Recon_01"},
+};
+
+        

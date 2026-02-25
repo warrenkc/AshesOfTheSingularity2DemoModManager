@@ -1,0 +1,6 @@
+{
+  "no_supply_limit": false,
+  "no_building_limits": false,
+  "all_research": false,
+  "double_extractor_resources": false
+}

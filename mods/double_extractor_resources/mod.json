@@ -1,0 +1,171 @@
+{
+  "id": "double_extractor_resources",
+  "name": "Double Extractor Resources",
+  "description": "Doubles the resource output of all extractor-category buildings (ore mines, gas mines, tech labs, logistics depots, refineries, and amplifiers) for both PHC and UEF factions.",
+  "version": "1.0",
+  "patches": [
+
+    {
+      "comment": "PHC Ore Mine: 2.0 -> 4.0 per second",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_PHC_Ore_Mine\",.*?\\[Players\\.Resource\\.Ore\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Ore Mine Upgraded: 3.0 -> 6.0 per second",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_PHC_Ore_Mine_Up\",.*?\\[Players\\.Resource\\.Ore\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Gas Mine: 2.0 -> 4.0 per second",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_PHC_Gas_Mine\",.*?\\[Players\\.Resource\\.Gas\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Gas Mine Upgraded: 3.0 -> 6.0 per second",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_PHC_Gas_Mine_Up\",.*?\\[Players\\.Resource\\.Gas\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Tech Lab: 1.0 -> 2.0 tech per second",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_PHC_Tech\",.*?\\[Players\\.Resource\\.Tech\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Logistics Depot grant: 30 -> 60",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_PHC_Log\".*?\\.grant\\s*=\\s*\\{[^}]*?\\[Players\\.Resource\\.Logistics\\]\\s*=\\s*(\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Logistics Depot capacity: 30 -> 60",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_PHC_Log\".*?\\.capacity\\s*=\\s*\\{[^}]*?\\[Players\\.Resource\\.Logistics\\]\\s*=\\s*(\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Refinery regional modifier - Ore boost: 0.5 -> 1.0",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"MOD_PHC_Refinery_BASE\".*?OrePerSecond.*?\\.amount\\s*=\\s*(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Refinery regional modifier - Gas boost: 0.5 -> 1.0",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"MOD_PHC_Refinery_BASE\".*?GasPerSecond.*?\\.amount\\s*=\\s*(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Amplifier regional modifier - Ore boost: 1.5 -> 3.0",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"MOD_PHC_Amplifier_BASE\".*?OrePerSecond.*?\\.amount\\s*=\\s*(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "PHC Amplifier regional modifier - Gas boost: 1.5 -> 3.0",
+      "file": "Modules_PHC.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"MOD_PHC_Amplifier_BASE\".*?GasPerSecond.*?\\.amount\\s*=\\s*(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+
+    {
+      "comment": "UEF Ore Mine: 2.0 -> 4.0 per second",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_UEF_Ore_Mine\",.*?\\[Players\\.Resource\\.Ore\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "UEF Ore Mine Upgraded: 3.0 -> 6.0 per second",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_UEF_Ore_Mine_Up\",.*?\\[Players\\.Resource\\.Ore\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "UEF Gas Mine: 2.0 -> 4.0 per second",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_UEF_Gas_Mine\",.*?\\[Players\\.Resource\\.Gas\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "UEF Gas Mine Upgraded: 3.0 -> 6.0 per second",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_UEF_Gas_Mine_Up\",.*?\\[Players\\.Resource\\.Gas\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "UEF Tech Lab: 1.0 -> 2.0 tech per second",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_UEF_Tech\",.*?\\[Players\\.Resource\\.Tech\\]\\s+=\\s+(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "UEF Logistics Depot grant: 30 -> 60",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_UEF_Log\".*?\\.grant\\s*=\\s*\\{[^}]*?\\[Players\\.Resource\\.Logistics\\]\\s*=\\s*(\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "UEF Logistics Depot capacity: 30 -> 60",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"Res_UEF_Log\".*?\\.capacity\\s*=\\s*\\{[^}]*?\\[Players\\.Resource\\.Logistics\\]\\s*=\\s*(\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "UEF Refinery regional modifier - Ore boost: 0.50 -> 1.00",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"MOD_UEF_Refinery_BASE\".*?OrePerSecond.*?\\.amount\\s*=\\s*(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    },
+    {
+      "comment": "UEF Refinery regional modifier - Gas boost: 0.50 -> 1.00",
+      "file": "Modules_UEF.zdata",
+      "type": "multiply",
+      "pattern": "(?s)\\.templateID\\s+=\\s+\"MOD_UEF_Refinery_BASE\".*?GasPerSecond.*?\\.amount\\s*=\\s*(\\d+\\.\\d+)",
+      "factor": 2.0,
+      "group": 1
+    }
+
+  ]
+}

@@ -1,0 +1,589 @@
+schema Buildings;
+
+// ---------- UEF Headquarters 01 ----------
+
+export BuildingTemplate bld_UEF_HQ =
+{
+    .TemplateID  = "bld_UEF_HQ",
+    .Name        = "TXT_UEF_HQ_NAME",
+    .Desc        = "TXT_UEF_HQ_DESC",
+    .Asset       = "BLD_UEF_Headquarters_01",
+    .iconID      = "BLD_UEF_HQ_01",
+    .category    = "HQ",
+    .Faction     = Players.playerType.UEF,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .Flags       = BuildingFlags.regionCenter | BuildingFlags.loseIfKilled,
+    .maxHps      = 10000,
+	.healRate	 = 40,	
+    .radiusFloraCollider = 160.0f,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .targetingRadius = 90.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Res_UEF_HQ" },
+            { 1, 0xffffffff, "Con_UEF_HQ" },
+            { 2, 0xffffffff, "VIS_UEF_HQ" },
+
+            // Controls Queuing for Each Unit Type
+            { 3, 0xffffffff, "Con_UEF_Light_Coordination" },
+            { 4, 0xffffffff, "Con_UEF_Med_Coordination" },
+            { 5, 0xffffffff, "Con_UEF_Heavy_Coordination" },
+            { 6, 0xffffffff, "Con_UEF_Air_Coordination" },
+            { 7, 0xffffffff, "Con_UEF_Super_Coordination" },			
+
+			// Support for Dev Con All Building
+            { 8, 0xffffffff, "DEV_CON_ALL_HELPER" },
+			
+			// Weapons (Turrets)
+            { 9, 0xffffffff, "WEP_UEF_HQ_01_P01" },
+            {10, 0xffffffff, "WEP_UEF_HQ_01_P02" },
+            {11, 0xffffffff, "WEP_UEF_HQ_01_P03" },
+            {12, 0xffffffff, "WEP_UEF_HQ_01_P04" },
+			{13, 0xffffffff, "WEP_UEF_HQ_01_S01" },
+            {14, 0xffffffff, "WEP_UEF_HQ_01_S02" },
+			
+			// Workers
+            { 15, 0xffffffff, "Worker_HQ_Spawner" },
+        },
+    },
+};
+
+// ---------- UEF DEV Construct All Units ----------
+
+export BuildingTemplate BLD_UEF_DEV_CON_ALL = 
+{
+    .TemplateID  = "BLD_UEF_DEV_CON_ALL",
+    .Name        = "TXT_UEF_DEV_CON_ALL_NAME",
+    .Desc        = "TXT_UEF_DEV_CON_ALL_DESC",
+    .Asset       = "BLD_DEV_Medium_01",
+    .iconID      = "Icon_ResourceScore",
+    .category    = "Other",
+    .Faction     = Players.playerType.UEF,
+    .radiusFloraCollider = 192.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .Flags       = BuildingFlags.preventsCapture | BuildingFlags.aiForbidden,
+    .oreCost     = 0,
+    .gasCost     = 0,
+    .timeCost    = 1,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 1, 0xffffffff, "DEV_CON_ALL" },
+        },
+    },
+};
+
+// ---------- UEF Production Light 01 (Barracks) ----------
+
+export BuildingTemplate BLD_UEF_Prod_Light_01 = 
+{
+    .TemplateID  = "BLD_UEF_Prod_Light_01",
+    .Name        = "TXT_UEF_PROD_LIGHT_NAME",
+    .Desc        = "TXT_UEF_PROD_LIGHT_DESC",
+    .Asset       = "BLD_UEF_Prod_Light_01",
+    .iconID      = "BLD_UEF_Prod_Light_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.UEF,
+    // .prereq      = None
+    .radiusFloraCollider = 160.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost    = 300,
+    .gasCost    = 0,
+    .timeCost    = 20,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Con_UEF_Light" },
+        },
+    },
+};
+
+// ---------- UEF Production Medium 01 (Motor Pool) ----------
+
+export BuildingTemplate BLD_UEF_Prod_Medium_01 = 
+{
+    .TemplateID  = "BLD_UEF_Prod_Medium_01",
+    .Name        = "TXT_UEF_PROD_MED_NAME",
+    .Desc        = "TXT_UEF_PROD_MED_DESC",
+    .Asset       = "BLD_UEF_Prod_Medium_01",
+    .iconID      = "BLD_UEF_Prod_Medium_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Prod_Light_01",
+    .radiusFloraCollider = 160.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 500,
+    .gasCost     = 0,
+    .timeCost    = 30,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Con_UEF_Med" },
+        },
+    },
+};
+
+// ---------- UEF Production Heavy 01 (Armory) ----------
+
+export BuildingTemplate BLD_UEF_Prod_Heavy_01 = 
+{
+    .TemplateID  = "BLD_UEF_Prod_Heavy_01",
+    .Name        = "TXT_UEF_PROD_HEAVY_NAME",
+    .Desc        = "TXT_UEF_PROD_HEAVY_DESC",
+    .Asset       = "BLD_UEF_Prod_Heavy_01",
+    .iconID      = "BLD_UEF_Prod_Heavy_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Prod_Medium_01",
+    .radiusFloraCollider = 160.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 400,
+    .gasCost     = 400,
+    .timeCost    = 40,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Con_UEF_Heavy" },
+        },
+    },
+};
+
+// ---------- UEF Production Flying 01 (Airfield) ----------
+
+export BuildingTemplate BLD_UEF_Prod_Air_01 =
+{
+    .TemplateID  = "BLD_UEF_Prod_Air_01",
+    .Name        = "TXT_UEF_PROD_AIR_NAME",
+    .Desc        = "TXT_UEF_PROD_AIR_DESC",
+    .Asset       = "BLD_UEF_Prod_Air_01",
+    .iconID      = "BLD_UEF_Prod_Air_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Prod_Medium_01",	
+    .radiusFloraCollider = 160.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 300,
+    .gasCost     = 500,
+    .timeCost    = 40,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Con_UEF_Air" },
+        },
+    },
+};
+
+// ---------- UEF Production Super 01 ----------
+
+export BuildingTemplate BLD_UEF_Prod_Super_01 = 
+{
+    .TemplateID  = "BLD_UEF_Prod_Super_01",
+    .Name        = "TXT_UEF_PROD_SUPER_NAME",
+    .Desc        = "TXT_UEF_PROD_SUPER_DESC",
+    .Asset       = "BLD_UEF_Prod_Super_01",
+    .iconID      = "BLD_UEF_Prod_Super_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.UEF,
+    //.prereq      = "",
+    .radiusFloraCollider = 160.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_02",
+    .oreCost     = 500,
+    .gasCost     = 750,
+    .timeCost    = 65,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Con_UEF_Super" },
+        },
+    },
+};
+
+// ---------- UEF Logistics 01 (Supply Depot) ----------
+
+export BuildingTemplate BLD_UEF_Logistics_01 = 
+{
+    .TemplateID  = "BLD_UEF_Logistics_01",
+    .Name        = "TXT_UEF_LOGISTICS_NAME",
+    .Desc        = "TXT_UEF_LOGISTICS_DESC",
+    .Asset       = "BLD_UEF_Logistics_01",
+    .iconID      = "BLD_UEF_Logistics_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Prod_Light_01",
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 75,
+    .gasCost     = 0,
+    .timeCost    = 20,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Res_UEF_Log" },
+        },
+    },
+};
+
+// ---------- UEF Tech 01 (Research Lab) ----------
+
+export BuildingTemplate BLD_UEF_Tech_01 = 
+{
+    .TemplateID  = "BLD_UEF_Tech_01",
+    .Name        = "TXT_UEF_TECH_NAME",
+    .Desc        = "TXT_UEF_TECH_DESC",
+    .Asset       = "BLD_UEF_Tech_01",
+    .iconID      = "BLD_UEF_Tech_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Gas_01",
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 75,
+    .gasCost     = 150,
+    .timeCost    = 30,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Res_UEF_Tech" },
+        },
+    },
+};
+
+// ---------- UEF Harvester Ore 01 (Durantium / Metal) ----------
+
+export BuildingTemplate BLD_UEF_Ore_01 = 
+{
+    .TemplateID  = "BLD_UEF_Ore_01",
+    .Name        = "TXT_UEF_ORE_01_NAME",
+    .Desc        = "TXT_UEF_ORE_01_DESC",
+    .Asset       = "BLD_UEF_Ore_01",
+    .iconID      = "BLD_UEF_Ore_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.UEF,
+    // .prereq      = None	
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.basicVersion,
+    .mapNodeTarget = "nrc_Ore",
+    .oreCost     = 150,
+    .gasCost     = 0,
+    .timeCost    = 15,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Res_UEF_Ore_Mine" },
+        },
+    },
+};
+
+// ---------- UEF Harvester Gas 01 (Elerite / Radioactives) ----------
+
+export BuildingTemplate BLD_UEF_Gas_01 = 
+{
+    .TemplateID  = "BLD_UEF_Gas_01",
+    .Name        = "TXT_UEF_GAS_01_NAME",
+    .Desc        = "TXT_UEF_GAS_01_DESC",
+    .Asset       = "BLD_UEF_Gas_01",
+    .iconID      = "BLD_UEF_Gas_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.UEF,
+    // .prereq      = None	
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.gasMine | BuildingFlags.basicVersion,
+    .mapNodeTarget = "nrc_Gas",
+    .oreCost     = 225,
+    .gasCost     = 0,
+    .timeCost    = 15,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Res_UEF_Gas_Mine" },
+        },
+    },
+};
+
+// ---------- UEF Refinery 01 ----------
+
+export BuildingTemplate BLD_UEF_Refinery_01 =
+{
+    .TemplateID  = "BLD_UEF_Refinery_01",
+    .Name        = "TXT_UEF_REFINERY_01_NAME",
+    .Desc        = "TXT_UEF_REFINERY_01_DESC",
+    .Asset       = "BLD_UEF_Refinery_01",
+    .iconID      = "BLD_UEF_Refinery_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.UEF,
+    // .prereq      = None; Unlocked via Technology	
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 150,
+    .gasCost     = 300,
+    .timeCost    = 45,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+	.ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "MOD_UEF_Refinery_01" },
+        },
+    },
+};
+
+// ---------- UEF Refinery 02 - Orbital Spawned Refinery ----------
+
+export BuildingTemplate BLD_UEF_Refinery_02 =
+{
+    .TemplateID  = "BLD_UEF_Refinery_02",
+    .Name        = "TXT_UEF_REFINERY_02_NAME",
+    .Desc        = "TXT_UEF_REFINERY_02_DESC",
+    .Asset       = "BLD_UEF_Refinery_01",
+    .iconID      = "BLD_UEF_Refinery_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.UEF,
+    // .prereq      = "None", - Unlocks Via Technology, Orbital Only	
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+	.Flags       = BuildingFlags.ignoresSlotLimit,
+    .oreCost     = 150,
+    .gasCost     = 300,
+    .timeCost    = 45,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+	.ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "MOD_UEF_Refinery_02" },
+        },
+    },
+};
+
+// ---------- UEF Defense Artillery 01 (Mortar) ----------
+
+export BuildingTemplate BLD_UEF_Artillery_01 =
+{
+    .TemplateID  = "BLD_UEF_Artillery_01",
+    .Name        = "TXT_UEF_DEFENSE_ARTILLERY_NAME",
+    .Desc        = "TXT_UEF_DEFENSE_ARTILLERY_DESC",
+    .Asset       = "BLD_UEF_Artillery_01",
+    .iconID      = "BLD_UEF_Artillery_01",
+    .category    = "Other",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Prod_Heavy_01",
+    .maxHps      = 2500,	
+    .radiusFloraCollider = 64.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.ignoresSlotLimit | BuildingFlags.preventsCapture | BuildingFlags.isDefense,
+    .oreCost     = 300,
+    .gasCost     = 300,
+    .timeCost    = 60,
+    .logCost     = 2,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 64.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "VIS_UEF_Artillery" },
+            { 1, 0xffffffff, "WEP_UEF_Defense_Artillery_01_P01" },
+        },
+    },
+};
+
+// ---------- UEF Defense Artillery 02 (Obliterator) ----------
+
+export BuildingTemplate BLD_UEF_Artillery_02 =
+{
+    .TemplateID  = "BLD_UEF_Artillery_02",
+    .Name        = "TXT_UEF_DEFENSE_ARTILLERY_02_NAME",
+    .Desc        = "TXT_UEF_DEFENSE_ARTILLERY_02_DESC",
+    .Asset       = "BLD_UEF_Artillery_02",
+    .iconID      = "BLD_UEF_Artillery_01_2",
+    .category    = "Other",
+    .Faction     = Players.playerType.UEF,
+    // .prereq      = "BLD_UEF_Prod_Heavy_01", - Unlocks Via Technology
+    .maxHps      = 5000,
+    .healRate    = 20,	
+    .radiusFloraCollider = 160.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.preventsCapture | BuildingFlags.isDefense,
+    .oreCost     = 1750,
+    .gasCost     = 1750,
+    .timeCost    = 330,
+    .logCost     = 10,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 128.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "VIS_UEF_Artillery" },
+            { 1, 0xffffffff, "WEP_UEF_Defense_Artillery_02_P01" },
+        },
+    },
+};
+
+// ---------- UEF Defense Direct 01 (Vanguard) ----------
+
+export BuildingTemplate BLD_UEF_Direct_01 = 
+{
+    .TemplateID  = "BLD_UEF_Direct_01",
+    .Name        = "TXT_UEF_DEFENSE_DIRECT_NAME",
+    .Desc        = "TXT_UEF_DEFENSE_DIRECT_DESC",
+    .Asset       = "BLD_UEF_Defense_01",
+    .iconID      = "BLD_UEF_Direct_01",
+    .category    = "Defense",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Prod_Light_01",
+    .maxHps      = 2500,		
+    .radiusFloraCollider = 64.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.ignoresSlotLimit | BuildingFlags.preventsCapture | BuildingFlags.isDefense,
+    .oreCost     = 300,
+    .gasCost     = 0,
+    .timeCost    = 35,
+    .logCost     = 1,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 64.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "VIS_UEF_Defense" },
+            { 1, 0xffffffff, "WEP_UEF_Defense_Direct_01_P01" },
+        },
+    },
+};
+
+// ---------- UEF Defense AntiAir 01 (Flak) ----------
+
+export BuildingTemplate BLD_UEF_AntiAir_01 =
+{
+    .TemplateID  = "BLD_UEF_AntiAir_01",
+    .Name        = "TXT_UEF_DEFENSE_ANTIAIR_NAME",
+    .Desc        = "TXT_UEF_DEFENSE_ANTIAIR_DESC",
+    .Asset       = "BLD_UEF_AntiAir_01",
+    .iconID      = "BLD_UEF_AntiAir_01",
+    .category    = "Defense",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Prod_Light_01",	
+    .maxHps      = 2500,
+    .radiusFloraCollider = 64.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.ignoresSlotLimit | BuildingFlags.preventsCapture | BuildingFlags.isDefense,
+    .oreCost     = 225,
+    .gasCost     = 0,
+    .timeCost    = 30,
+    .logCost     = 1,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 64.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree  =
+    {
+        .Modules =
+        {
+            { 0, 0xffffffff, "VIS_UEF_AntiAir" },
+            { 1, 0xffffffff, "WEP_UEF_Defense_AntiAir_01_P01" },
+        },
+    },
+};
+
+// ---------- UEF Emergency Turret (Orbital Drop) ----------
+
+export BuildingTemplate BLD_UEF_Turret_01 =
+{
+    .TemplateID  = "BLD_UEF_Turret_01",
+    .Name        = "TXT_ORB_GEN_TURRET_01_NAME",
+    .Desc        = "TXT_ORB_GEN_TURRET_01_DESC",
+    .Asset       = "BLD_UEF_AntiAir_01",
+    .iconID      = "BLD_UEF_AntiAir_01_02",
+    .category    = "Defense",
+    //.Faction     = Players.playerType.UEF, // Removing from UEF so it does not show up in defensive structures
+    //.prereq      = "None", Technology Unlock - Orbital Only		
+    .maxHps      = 2500,
+    .radiusFloraCollider = 64.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.ignoresSlotLimit | BuildingFlags.preventsCapture | BuildingFlags.isDefense,
+    .logCost     = 0,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 64.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree  =
+    {
+        .Modules =
+        {
+            { 0, 0xffffffff, "VIS_UEF_AntiAir" },
+            { 1, 0xffffffff, "WEP_UEF_Defense_AntiAir_01_P01" },
+        },
+    },
+};
+
+// ---------- UEF Radar 01 ----------
+
+export BuildingTemplate BLD_UEF_Radar_01 = 
+{
+    .TemplateID  = "BLD_UEF_Radar_01",
+    .Name        = "TXT_UEF_RADAR_NAME",
+    .Desc        = "TXT_UEF_RADAR_DESC",
+    .Asset       = "BLD_UEF_Radar_01",
+    .iconID      = "BLD_UEF_Radar_01",
+    .category    = "Defense",
+    .Faction     = Players.playerType.UEF,
+    .prereq      = "BLD_UEF_Gas_01",
+    .Flags       = BuildingFlags.isDefense,
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .oreCost     = 225,
+    .gasCost     = 75,
+    .timeCost    = 20,
+    .logCost     = 0,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding, // I was mixed on this, but ultimately decided it would really help to take these out quickly in a fight
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "VIS_UEF_Radar" },
+        },
+    },
+};
+
+

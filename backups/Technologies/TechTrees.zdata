@@ -1,0 +1,215 @@
+schema Technologies;
+
+// ------------- UEF Tech Tree -------------
+
+export TechnologyTree TTR_UEF_01 =
+{
+    .tracks = 
+    {
+		{
+			.techCategoryID = "TCG_GEN_01",
+			.technologies =
+			{
+				{"TCH_UEF_ASS_03", 4, 0},	// Deep Strike Squad - Orbital Unlock 
+				{"TCH_UEF_FAB_03", 1, 2},	// Battlefoundry Initiatlized - Motor Pool Vehicle Health Buff
+				{"TCH_UEF_ASS_04", 4, 2},	// Titan Initiative - Titan Unit Unlock
+				{"TCH_UEF_ASS_06", 7, 2},	// Superchargers - Motor Pool Vehicle Speed Buff
+				{"TCH_UEF_ASS_02", 2, 4},	// Bomber Command - Bomber Unit and Orbital Unlock
+				{"TCH_UEF_ASS_08", 4, 4},	// Siege Warfare - Artillery Buff
+				{"TCH_UEF_ASS_01", 6, 4},	// Artillery Barrage - Orbital Unlock 				
+				{"TCH_UEF_ASS_05", 4, 6},	// Godslayer Protocol - Godslayer Unit Unlock
+				//{"TCH_UEF_ASS_05", 3, 8},	// ???			
+			},
+			.graphWidth = 9,
+			.graphHeight = 7,
+			.graphData =
+			{
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 1, 1, 1, 1, 1, 1, 1, 0,
+			0, 1, 0, 0, 1, 0, 0, 1, 0,
+			0, 0, 1, 1, 1, 1, 1, 0, 0,
+			0, 0, 1, 0, 1, 0, 1, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			}
+		},
+		{
+			.techCategoryID = "TCG_GEN_02",
+			.technologies =
+			{
+				{"TCH_UEF_CON_02", 4, 0},  // Garrison Protocol - Unlocks Infantry Drop      
+				{"TCH_UEF_CON_08", 1, 2},  // Precision Targeting - Defense Damage Buff
+				{"TCH_UEF_INT_02", 4, 2},  // Forward Recon - Cavalier Unit Unlock
+				{"TCH_UEF_CON_05", 7, 2},  // Body Armor - Infantry HP Buff
+				{"TCH_UEF_CON_07", 2, 4},  // Air Patrol - Air Support Orbital Unlock 
+				{"TCH_UEF_CON_06", 4, 4},  // Goliath - Goliath Unit Unlock
+				{"TCH_UEF_CON_11", 6, 4},  // Rapid Entrenchment - Decreases Turret Costs
+				{"TCH_UEF_CON_09", 4, 6},  // Obliterator Cannon - Unlocks Obliterator Building
+				//{"TCH_UEF_CON_09", 3, 8},  // 
+			},
+			.graphWidth = 9,
+			.graphHeight = 7,
+			.graphData =
+			{
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 1, 1, 1, 1, 1, 1, 1, 0,
+			0, 1, 0, 0, 1, 0, 0, 1, 0,
+			0, 0, 1, 1, 1, 1, 1, 0, 0,
+			0, 0, 1, 0, 1, 0, 1, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			}
+		},
+		{
+			.techCategoryID = "TCG_GEN_03",
+			.technologies =
+			{
+				{"TCH_UEF_DOM_11", 4, 0},  // Overclocked Refinery - Overcharged Refinery Orbital Unlock
+				{"TCH_UEF_DOM_01", 1, 2},  // Expert Extraction - Ore Rate Buff				
+				{"TCH_UEF_DOM_04", 4, 2},  // Refining - unlocks Refinery
+				{"TCH_UEF_DOM_02", 7, 2},  // Parallel Construction - adds construction drone
+				{"TCH_UEF_DOM_05", 2, 4},  // Radar Hyperplexing - Radar Range Buff
+				{"TCH_UEF_DOM_08", 4, 4},  // Conrad Protocols - Logistics Capacity Buff
+				{"TCH_UEF_DOM_07", 6, 4},  // Research Networking - Tech Rate Buff
+				{"TCH_UEF_DOM_10", 4, 6},  // Overdrive Protocol - Ore and Gas Rate Buff
+				//{"TCH_UEF_DOM_10", 3, 8},  // 
+			},
+			.graphWidth = 9,
+			.graphHeight = 7,
+			.graphData =
+			{
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 1, 1, 1, 1, 1, 1, 1, 0,
+			0, 1, 0, 0, 1, 0, 0, 1, 0,
+			0, 0, 1, 1, 1, 1, 1, 0, 0,
+			0, 0, 1, 0, 1, 0, 1, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			}
+		},
+	},			
+    .lockedOrbitals =
+    {
+        "ORB_UEF_Scout_01",
+		"ORB_UEF_Swarm_01",
+		"ORB_UEF_Fighter_01",
+		"ORB_UEF_Bomber_01",
+		"ORB_UEF_Refinery_01",				
+		"ORB_GEN_NEU_01",
+	//	"ORB_GEN_NEU_03",	Not in tech tree
+	//	"ORB_GEN_Turret_01", Not in tech tree
+		"ORB_GEN_Artillery_01",
+    },
+    .freeTechnologies =
+    {
+        "TCH_UEF_FREE",
+        // "TCH_UEF_DEV_CON_ALL", - Disabled
+    },
+};
+
+// ------------- PHC Tech Tree -------------
+// Three tracks: Extermination, Exploration, Exploitation
+// Symmetric 1-3-3-1 structure (8 techs per track, matching UEF v2)
+
+export TechnologyTree TTR_PHC_01 =
+{
+    .tracks =
+    {
+		// Track 1: EXTERMINATION - Combat units, offensive capabilities
+		{
+			.techCategoryID = "TCG_PHC_03",  
+			.technologies =
+			{
+				{"TCH_PHC_EXTM_00",  4, 0},   // L0: Archer Support
+				{"TCH_PHC_EXPL_12",  1, 2},   // L2: Brute Force
+				{"TCH_PHC_EXTM_02B", 4, 2},   // L2: Forge
+				{"TCH_PHC_EXPT_08",  7, 2},   // L2: Overcharged Plasma
+				{"TCH_PHC_EXTM_11",  2, 4},   // L4: Strategic Bombing
+				{"TCH_PHC_EXTM_06",  4, 4},   // L4: God's Oven
+				{"TCH_PHC_EXTM_04C", 6, 4},   // L4: Ares Protocol
+				{"TCH_PHC_EXPL_10",  4, 6},   // L6: Hyperion Protocol
+			},
+			.graphWidth = 9,
+			.graphHeight = 7,
+			.graphData =
+			{
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 1, 1, 1, 1, 1, 1, 1, 0,
+			0, 1, 0, 0, 1, 0, 0, 1, 0,
+			0, 0, 1, 1, 1, 1, 1, 0, 0,
+			0, 0, 1, 0, 1, 0, 1, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			}
+		},			
+		// Track 2: EXPLORATION - Vision, detection, defensive structures
+		{
+			.techCategoryID = "TCG_PHC_01",
+			.technologies =
+			{
+				{"TCH_PHC_EXPL_14",  4, 0},   // L0: Deep Strike Squad
+				{"TCH_PHC_EXPL_02B", 1, 2},   // L2: Inertia Dampening
+				{"TCH_PHC_EXPL_04A", 4, 2},   // L2: Command Post
+				{"TCH_PHC_EXPL_04B", 7, 2},   // L2: Amplifier Towers
+				{"TCH_PHC_EXPL_13",  2, 4},   // L4: God's Eyepiece
+				{"TCH_PHC_EXTM_08C", 4, 4},   // L4: Maverick Drop
+				{"TCH_PHC_EXPL_15",  6, 4},   // L4: Shock and Awe
+				{"TCH_PHC_EXTM_10",  4, 6},   // L6: Giant Commander
+			},
+			.graphWidth = 9,
+			.graphHeight = 7,
+			.graphData =
+			{
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 1, 1, 1, 1, 1, 1, 1, 0,
+			0, 1, 0, 0, 1, 0, 0, 1, 0,
+			0, 0, 1, 1, 1, 1, 1, 0, 0,
+			0, 0, 1, 0, 1, 0, 1, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			}
+		},
+		// Track 3: EXPLOITATION - Economy, production speed, commander bonuses
+		{
+			.techCategoryID = "TCG_PHC_02",
+			.technologies =
+			{
+				{"TCH_PHC_EXPT_00",  4, 0},   // L0: Command Supervision
+				{"TCH_PHC_EXPT_11",  1, 2},   // L2: Orbital Organization
+				{"TCH_PHC_EXPT_02A", 4, 2},   // L2: Core Tap
+				{"TCH_PHC_EXPT_02B", 7, 2},   // L2: Subspace Filtering
+				{"TCH_PHC_EXPT_06A", 2, 4},   // L4: Command Execution
+				{"TCH_PHC_EXPT_06C", 4, 4},   // L4: Acolytes
+				{"TCH_PHC_EXPT_04",  6, 4},   // L4: Network Optimization
+				{"TCH_PHC_EXPT_10",  4, 6},   // L6: Amplifier Network
+			},
+			.graphWidth = 9,
+			.graphHeight = 7,
+			.graphData =
+			{
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 1, 1, 1, 1, 1, 1, 1, 0,
+			0, 1, 0, 0, 1, 0, 0, 1, 0,
+			0, 0, 1, 1, 1, 1, 1, 0, 0,
+			0, 0, 1, 0, 1, 0, 1, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			0, 0, 0, 0, 1, 0, 0, 0, 0,
+			}
+		},
+	},
+    .lockedOrbitals =
+    {
+        "ORB_PHC_Scout_01",
+		"ORB_PHC_Support_01",
+		"ORB_PHC_Gunship_01",
+		"ORB_GEN_Laser_01",
+		"ORB_GEN_NEU_01",
+		"ORB_PHC_Sniper_02",
+		"ORB_PHC_Refinery_01",		
+    },
+    .freeTechnologies =
+    {
+        "TCH_PHC_FREE",
+    //    "TCH_PHC_DEV_CON_ALL", - Disabled
+    },
+};

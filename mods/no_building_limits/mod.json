@@ -1,0 +1,18 @@
+{
+  "id": "no_building_limits",
+  "name": "No Building Limits",
+  "description": "Removes the building slot requirement on all buildings for both factions.",
+  "version": "1.0",
+  "patches": [
+    {
+      "file": "Buildings_UEF.zdata",
+      "type": "copy",
+      "source": "Buildings_UEF.zdata"
+    },
+    {
+      "file": "Buildings_PHC.zdata",
+      "type": "copy",
+      "source": "Buildings_PHC.zdata"
+    }
+  ]
+}

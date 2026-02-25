@@ -1,0 +1,44 @@
+{
+  "id": "no_supply_limit",
+  "name": "No Supply Limit",
+  "description": "Sets logistics cost to 0 on all units and buildings. Build unlimited armies!",
+  "version": "1.0",
+  "patches": [
+    {
+      "file": "Units.zdata",
+      "type": "regex",
+      "pattern": "(\\.logCost\\s*=\\s*)[1-9]\\d*",
+      "replacement": "\\g<1>0"
+    },
+    {
+      "file": "Units_UEF.zdata",
+      "type": "regex",
+      "pattern": "(\\.logCost\\s*=\\s*)[1-9]\\d*",
+      "replacement": "\\g<1>0"
+    },
+    {
+      "file": "Units_PHC.zdata",
+      "type": "regex",
+      "pattern": "(\\.logCost\\s*=\\s*)[1-9]\\d*",
+      "replacement": "\\g<1>0"
+    },
+    {
+      "file": "Units_NEU.zdata",
+      "type": "regex",
+      "pattern": "(\\.logCost\\s*=\\s*)[1-9]\\d*",
+      "replacement": "\\g<1>0"
+    },
+    {
+      "file": "Buildings_UEF.zdata",
+      "type": "regex",
+      "pattern": "(\\.logCost\\s*=\\s*)[1-9]\\d*",
+      "replacement": "\\g<1>0"
+    },
+    {
+      "file": "Buildings_PHC.zdata",
+      "type": "regex",
+      "pattern": "(\\.logCost\\s*=\\s*)[1-9]\\d*",
+      "replacement": "\\g<1>0"
+    }
+  ]
+}

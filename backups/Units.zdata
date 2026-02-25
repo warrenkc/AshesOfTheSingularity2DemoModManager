@@ -1,0 +1,112 @@
+schema Units;
+
+
+// ---------- Dev Infantry 01 Unit ----------
+export UnitTemplate UNT_DEV_Infantry_01 =
+{
+    .templateHandle = "UNT_DEV_Infantry_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Infantry_01", },
+};
+
+
+// ---------- Dev Vehicle 01 Unit ----------
+export UnitTemplate UNT_DEV_Vehicle_01 =
+{
+    .templateHandle = "UNT_DEV_Vehicle_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Vehicle_01", },
+};
+
+// ---------- Dev Vehicle 02 Unit - Punching Bag ----------
+export UnitTemplate UNT_DEV_Vehicle_02 =
+{
+    .templateHandle = "UNT_DEV_Vehicle_02",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Vehicle_02", },
+};
+
+// ---------- Dev Mech 01 Unit ----------
+export UnitTemplate UNT_DEV_Mech_01 =
+{
+    .templateHandle = "UNT_DEV_Mech_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Mech_01", },
+};
+
+// ---------- Dev Fighter 01 Unit ----------
+export UnitTemplate UNT_DEV_Fighter_01 =
+{
+    .templateHandle = "UNT_DEV_Fighter_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Fighter_01", },
+};
+
+// ---------- Dev Gunship 01 Unit ----------
+export UnitTemplate UNT_DEV_Gunship_01 =
+{
+    .templateHandle = "UNT_DEV_Gunship_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Gunship_01", },
+};
+
+// ---------- Dev Gunship 02 Unit - Punching Bag----------
+export UnitTemplate UNT_DEV_Gunship_02 =
+{
+    .templateHandle = "UNT_DEV_Gunship_02",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Gunship_02", },
+};
+
+ // ---------- Dev Killer (Tank) 01 Unit ----------
+export UnitTemplate UNT_DEV_Killer_01 =
+{
+    .templateHandle = "UNT_DEV_Killer_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Killer_01", },
+};
+
+ // ---------- Dev Spotter (Large Vis Radius Vehicle) 01 Unit ----------
+export UnitTemplate UNT_DEV_Spotter_01 =
+{
+    .templateHandle = "UNT_DEV_Spotter_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .oreCost    = 1,
+    .gasCost    = 0,
+    .timeCost   = 1,
+    .logCost    = 1,
+    .elements   = { "ELM_DEV_Spotter_01", },
+};
+ 

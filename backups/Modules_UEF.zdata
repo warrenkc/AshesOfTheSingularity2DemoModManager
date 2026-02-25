@@ -1,0 +1,2884 @@
+schema Modules;
+
+// ---------------------------------------- UEF STEERING AND WEAPONS ----------------------------------------
+
+// -------------------- UEF HQ WEAPONS --------------------
+
+// ---------- UEF HQ Primary Weapons (4 Light Cannons) ----------
+
+export ModuleTemplate WEP_UEF_HQ_01_P01 =
+{
+    .templateID              = "WEP_UEF_HQ_01_P01",
+    .name                    = "TXT_WEP_UEF_HQ_01_P01_NAME",
+    .description         	 = "TXT_WEP_UEF_HQ_01_P01_DESC",			
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 4,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 2.1,
+        .firingArcPitchClamp              = 1.7,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_UEF_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01", "FireNode_02", "FireNode_03", "FireNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+export ModuleTemplate WEP_UEF_HQ_01_P02 =
+{
+    .templateID              = "WEP_UEF_HQ_01_P02",
+    .name                    = "TXT_WEP_UEF_HQ_01_P02_NAME",
+    .description         	 = "TXT_WEP_UEF_HQ_01_P02_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 4,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 2.1,
+        .firingArcPitchClamp              = 1.7,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_UEF_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_02",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_02",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_05", "FireNode_06", "FireNode_07", "FireNode_08",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+export ModuleTemplate WEP_UEF_HQ_01_P03 =
+{
+    .templateID              = "WEP_UEF_HQ_01_P03",
+    .name                    = "TXT_WEP_UEF_HQ_01_P03_NAME",
+    .description         	 = "TXT_WEP_UEF_HQ_01_P03_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 4,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 2.1,
+        .firingArcPitchClamp              = 1.7,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_UEF_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_03",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_03",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_09", "FireNode_10", "FireNode_11", "FireNode_12",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+export ModuleTemplate WEP_UEF_HQ_01_P04 =
+{
+    .templateID              = "WEP_UEF_HQ_01_P04",
+    .name                    = "TXT_WEP_UEF_HQ_01_P04_NAME",
+    .description         	 = "TXT_WEP_UEF_HQ_01_P04_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 4,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 2.1,
+        .firingArcPitchClamp              = 1.7,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_UEF_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_04",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_04",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_13", "FireNode_14", "FireNode_15", "FireNode_16",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF HQ Secondary Weapons (2 AntiAir Guns) ----------
+
+export ModuleTemplate WEP_UEF_HQ_01_S01 =
+{
+    .templateID              = "WEP_UEF_HQ_01_S01",
+    .name                    = "TXT_WEP_UEF_HQ_01_S01_NAME",
+    .description         	 = "TXT_WEP_UEF_HQ_01_S01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 8,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.03,
+        .firingArcPitch                   = 0.03,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 2.35, 
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2200,
+        .maxScanRange                     = 2200,
+        .projectileName                   = "PRO_UEF_HQ_01_Secondary",
+        .yawHash                          = "Turret_Yaw_05",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_05",              // the named node in the model that corresponds to the pitch of this turret
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_GenericMachineGun",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	0.875,									// Muzzleflash disabled in projectile and moved here
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_17", "FireNode_18", "FireNode_19", "FireNode_20",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+export ModuleTemplate WEP_UEF_HQ_01_S02 =
+{
+    .templateID              = "WEP_UEF_HQ_01_S02",
+    .name                    = "TXT_WEP_UEF_HQ_01_S02_NAME",
+    .description         	 = "TXT_WEP_UEF_HQ_01_S02_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 8,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.03,
+        .firingArcPitch                   = 0.03,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 2.35, 
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2200,
+        .maxScanRange                     = 2200,
+        .projectileName                   = "PRO_UEF_HQ_01_Secondary",
+        .yawHash                          = "Turret_Yaw_06",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_06",              // the named node in the model that corresponds to the pitch of this turret
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_GenericMachineGun",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	0.875,									// Muzzleflash disabled in projectile and moved here		
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_21", "FireNode_22", "FireNode_23", "FireNode_24",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+
+// ---------- UEF HQ Radar Dummy Weapon (For Rotating the Dish, Needs to Be Done Through Anims) ----------
+
+export ModuleTemplate WEP_UEF_HQ_01_Radar =
+{
+    .templateID              = "WEP_UEF_HQ_01_Radar",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 100,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.1,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 0.52,
+        .firingArcTurnRate                = 0.78,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 100,
+        .maxScanRange                     = 100,
+        .projectileName                   = "PRO_UEF_HQ_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF DEFENSE WEAPONS --------------------
+
+
+// ---------- UEF Defense Artillery Primary Weapon (Artillery Cannon) ----------
+
+export ModuleTemplate WEP_UEF_Defense_Artillery_01_P01 =
+{
+    .templateID              = "WEP_UEF_Defense_Artillery_01_P01",
+    .name                    = "TXT_WEP_UEF_Defense_Artillery_01_P01_NAME",
+    .description         	 = "TXT_WEP_UEF_Defense_Artillery_01_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "ArtilleryTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning | WeaponModuleFlags.eClampPitchUp | WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 3.14,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 3.14,                           // this has to pitch nearly vertical to hit anything close
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 100,
+        .maxFiringRange                   = 2500,
+        .maxScanRange                     = 3200,
+        .scatter                          = 125,			
+        .projectileName                   = "PRO_UEF_Defense_Artillery_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- UEF Defense Artillery 02 Primary Weapon (Obliterator Cannon) ----------
+
+export ModuleTemplate WEP_UEF_Defense_Artillery_02_P01 =
+{
+    .templateID              = "WEP_UEF_Defense_Artillery_02_P01",
+    .name                    = "TXT_WEP_UEF_Defense_Artillery_02_P01_NAME",
+    .description         	 = "TXT_WEP_UEF_Defense_Artillery_02_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "ArtilleryTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning | WeaponModuleFlags.eClampPitchUp | WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 15,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 4.0,                           // this has to pitch nearly vertical to hit anything close
+        .firingArcTurnRate                = 0.20,
+        .minFiringRange                   = 100,
+        .maxFiringRange                   = 6000,
+        .maxScanRange                     = 6500,
+        .scatter                          = 125,			
+        .projectileName                   = "PRO_UEF_Defense_Artillery_02_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- UEF Defense Direct Primary Weapon (Quad Light Cannon) ----------
+
+export ModuleTemplate WEP_UEF_Defense_Direct_01_P01 =
+{
+    .templateID              = "WEP_UEF_Defense_Direct_01_P01",
+    .name                    = "TXT_WEP_UEF_Defense_Direct_01_P01_NAME",
+    .description         	 = "TXT_WEP_UEF_Defense_Direct_01_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 4,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.31,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1300,
+        .projectileName                   = "PRO_UEF_Defense_Direct_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01", "FireNode_02", "FireNode_03", "FireNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,   // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- UEF Defense AntiAir Primary Weapon (Quad AA Guns) ----------
+
+export ModuleTemplate WEP_UEF_Defense_AntiAir_01_P01 =
+{
+    .templateID              = "WEP_UEF_Defense_AntiAir_01_P01",
+    .name                    = "TXT_WEP_UEF_Defense_AntiAir_01_P01_NAME",
+    .description         	 = "TXT_WEP_UEF_Defense_AntiAir_01_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning | WeaponModuleFlags.eAntiAir,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 8,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.03,
+        .firingArcPitch                   = 0.03,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 2.35,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 2000,
+        .maxScanRange                     = 2000,
+        .projectileName                   = "PRO_UEF_Defense_AntiAir_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_GenericMachineGun",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	0.875,									// Muzzleflash disabled in projectile and moved here		
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01", "FireNode_02", "FireNode_03", "FireNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,   // Infantry
+            TargetPriorities.Ignore,   // Armor
+            TargetPriorities.Ignore,   // Small Mecha
+            TargetPriorities.Ignore, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Normal, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Ignore, // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Swarm 01 (Rifle Squad Infantry Rifle) --------------------
+
+export ModuleTemplate WEP_UEF_Swarm_01_Primary =
+{
+    .templateID              = "WEP_UEF_Swarm_01_Primary",
+    .name                    = "TXT_WEP_UEF_Swarm_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Swarm_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eUseSingleShotAnimation,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 3,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 0.78,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 750,
+        .maxScanRange                     = 850,
+        .projectileName                   = "PRO_UEF_Swarm_01",
+        .yawHash                          = "Indus_Human_Spine_01SHJnt",       // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Indus_Human_Spine_01SHJnt",       // the named node in the model that corresponds to the pitch of this turret
+        .combatAnimationGamestate         = 0x01000000,
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_GenericMachineGun",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	0.375,									// Muzzleflash disabled in projectile and moved here
+        .firingAnimationGamestate         = 0x00800000,
+        .firingAnimationDuration         = 0.26666666,
+        .firingAnimationHash             = "ANIM_UEF_Infantry_AttackRanged",
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FX_FireNode_01",
+        },
+        .animationNodeHashes              = 
+        {
+            "Indus_Human_Spine_01SHJnt", // also the yaw node
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,      // Infantry
+            TargetPriorities.High,       // Armor
+            TargetPriorities.High,       // Small Mecha
+            TargetPriorities.High,    // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,      // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,       // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Swarm 02 (Cavalier / Machine Gunner) --------------------
+
+export ModuleTemplate WEP_UEF_Swarm_02_Primary =
+{
+    .templateID              = "WEP_UEF_Swarm_02_Primary",
+    .name                    = "TXT_WEP_UEF_Swarm_02_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Swarm_02_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eUseSingleShotAnimation,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4.0,
+        .numPulsesPerFiring               = 8,
+        .durationOrInterpulseCooldown     = 0.1,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 0.78,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 750,
+        .maxScanRange                     = 850,
+        //.scatter                          = 100.0,                          // random scatter			
+        .projectileName                   = "PRO_UEF_Swarm_02",
+        .yawHash                          = "Indus_Human_Spine_01SHJnt",
+        .pitchHash                        = "Indus_Human_Spine_01SHJnt",
+        .combatAnimationGamestate         = 0x01000000,
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_GenericMachineGun",
+		.startOfFiringLifeTime			  =	1.0,			
+        .firingAnimationGamestate         = 0x00800000,
+        .firingAnimationDuration         = 0.26666666,
+        .firingAnimationHash             = "ANIM_UEF_Infantry_AttackRanged",
+        .firingNodeHashes                 =
+        {
+            "FX_FireNode_01",
+        },
+        .animationNodeHashes              = 
+        {
+            "Indus_Human_Spine_01SHJnt",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,      // Infantry
+            TargetPriorities.High,       // Armor
+            TargetPriorities.High,       // Small Mecha
+            TargetPriorities.High,    // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,      // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,       // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Swarm 03 (Grenadier Grenade Launcher) --------------------
+
+export ModuleTemplate WEP_UEF_Swarm_03_Secondary =
+{
+    .templateID              = "WEP_UEF_Swarm_03_Secondary",
+    .name                    = "TXT_WEP_UEF_Swarm_03_Secondary_NAME",
+    .description         	 = "TXT_WEP_UEF_Swarm_03_Secondary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eUseSingleShotAnimation,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 8.0,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 0.78,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 800,
+        .maxScanRange                     = 900,
+        .projectileName                   = "PRO_UEF_Swarm_03_Grenade",
+        .yawHash                          = "Indus_Human_Spine_01SHJnt",
+        .pitchHash                        = "Indus_Human_Spine_01SHJnt",
+        .combatAnimationGamestate         = 0x01000000,
+		//.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_GenericMachineGun", In Projectile (Grenade)
+		//.startOfFiringLifeTime			  =	0.25,			
+        .firingAnimationGamestate         = 0x00800000,
+        .firingAnimationDuration         = 0.26666666,
+        .firingAnimationHash             = "ANIM_UEF_Infantry_AttackRanged",
+        .firingNodeHashes                 =
+        {
+            "FX_FireNode_01",
+        },
+        .animationNodeHashes              = 
+        {
+            "Indus_Human_Spine_01SHJnt",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.High,      // Armor
+            TargetPriorities.High,      // Small Mecha
+            TargetPriorities.High,      // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,      // Building
+            TargetPriorities.Normal,      // Defensive Building
+            TargetPriorities.Ignore,       // Worker
+        },
+    }
+};
+
+// -------------------- UEF Armor 01 (Cruasder Tank) --------------------
+
+// ---------- UEF Armor 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Armor_01 =
+{
+    .templateID                = "STE_UEF_Armor_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 150, // original value 75
+        .maxFiringRange                   = 850, // original value 800
+        .maxScanRange                     = 1450, // Slightly larger leash than normal 500
+		.prefFiringRange				  = 0.6, // 0.7 is default					
+        .projectileName                   = "PRO_UEF_Armor_01_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Armor 01 Primary Weapon (Cannon) ----------
+
+export ModuleTemplate WEP_UEF_Armor_01_Primary =
+{
+    .templateID              = "WEP_UEF_Armor_01_Primary",
+    .name                    = "TXT_WEP_UEF_Armor_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Armor_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = 0,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.0,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 0.52,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1300,
+        .projectileName                   = "PRO_UEF_Armor_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Armor 01 Secondary Weapon (Machine Gun) ----------
+
+export ModuleTemplate WEP_UEF_Armor_01_Secondary =
+{
+    .templateID              = "WEP_UEF_Armor_01_Secondary",
+    .name                    = "TXT_WEP_UEF_Armor_01_Secondary_NAME",
+    .description         	 = "TXT_WEP_UEF_Armor_01_Secondary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 3,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 650,
+        .maxScanRange                     = 750,
+        .projectileName                   = "PRO_UEF_Armor_01_Secondary",
+        .yawHash                          = "MachineGun_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        //.pitchHash                        = "UEF_Unit_Crusader_Turret_Gun_01", // the named node in the model that corresponds to the pitch of this turret
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_GenericMachineGun",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	0.25,			
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,      // Infantry
+            TargetPriorities.Normal,   	// Armor
+            TargetPriorities.Normal,   	// Small Mecha
+            TargetPriorities.Normal,   	// Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,      // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,       // Building
+            TargetPriorities.Normal,    // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Armor 02 (Titan Mech) --------------------
+
+// ---------- UEF Armor 02 Steering ----------
+
+export ModuleTemplate STE_UEF_Armor_02 =
+{
+    .templateID             = "STE_UEF_Armor_02",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.309,
+        .firingArcTurnRate                = 3.14, // generally faster than the unit can turn
+        .minFiringRange                   = 0, // original 125
+        .maxFiringRange                   = 1000, //original 900
+        .maxScanRange                     = 1500, // a good rule of thumb for this is maxFringRange + leash distance of element
+		.prefFiringRange				  = 0.55, // 0.7 is default							
+    //    .projectileName                   = "",		
+    //    .yawHash                          = "UEF_HeavyMech_Torso_Yaw_01_Aux_SH_Jnt",                // Torso Twist using Steering did not work; disabled
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High, // Infantry
+            TargetPriorities.High,   // Armor
+            TargetPriorities.High,   // Small Mecha
+            TargetPriorities.High, // Big Mecha
+            TargetPriorities.Low, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- UEF Armor 02 Torso Weapon (Used for Rotating Upper Body) ----------
+
+export ModuleTemplate WEP_UEF_Armor_02_Torso =
+{
+    .templateID              = "WEP_UEF_Armor_02_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1100,
+        .maxScanRange                     = 1200,
+        .projectileName                   = "PRO_UEF_Armor_02_Primary", // Projectile used for leading shots
+        .yawHash                          = "UEF_HeavyMech_Torso_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High, // Infantry
+            TargetPriorities.High,   // Armor
+            TargetPriorities.High,   // Small Mecha
+            TargetPriorities.High, // Big Mecha
+            TargetPriorities.Low, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Armor 02 Primary Weapon (Heavy Auto-Cannons) ----------
+
+export ModuleTemplate WEP_UEF_Armor_02_Primary =
+{
+    .templateID              = "WEP_UEF_Armor_02_Primary",
+    .name                    = "TXT_WEP_UEF_Armor_02_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Armor_02_Primary_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 2,
+        .durationOrInterpulseCooldown     = 0.15,
+        .firingArcYaw                     = 0.2,
+        .firingArcPitch                   = 0.2,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 0.78,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1100,
+        .maxScanRange                     = 1200,
+        .projectileName                   = "PRO_UEF_Armor_02_Primary",
+        .yawHash                          = "UEF_HeavyMech_RightArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "UEF_HeavyMech_RightArm_Pitch_01_Aux_SH_Jnt",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+            "FireNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Armor 02 Secondary Weapon (Gatling Gun) ----------
+
+export ModuleTemplate WEP_UEF_Armor_02_Secondary =
+{
+    .templateID              = "WEP_UEF_Armor_02_Secondary",
+    .name                    = "TXT_WEP_UEF_Armor_02_Secondary_NAME",
+    .description         	 = "TXT_WEP_UEF_Armor_02_Secondary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 5,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.05,
+        .firingArcPitch                   = 0.05,
+        .firingArcYawClamp                = 1.57,
+        .firingArcPitchClamp              = 3.05,
+        .firingArcTurnRate                = 0.78,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1000,
+        .maxScanRange                     = 1100,
+        .projectileName                   = "PRO_UEF_Armor_02_Secondary",
+        .yawHash                          = "UEF_HeavyMech_LeftArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "UEF_HeavyMech_LeftArm_Pitch_01_Aux_SH_Jnt",              // the named node in the model that corresponds to the pitch of this turret
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_MechGatling",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	1.00,			
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_03",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High, // Infantry
+            TargetPriorities.High,   // Armor
+            TargetPriorities.High,   // Small Mecha
+            TargetPriorities.High, // Big Mecha
+            TargetPriorities.Normal, // Air
+            TargetPriorities.Low, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+
+// -------------------- UEF Super 01 (Godslayer Mech) --------------------
+
+// ---------- UEF Super 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Super_01 =
+{
+    .templateID             = "STE_UEF_Super_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.309,
+        .firingArcTurnRate                = 3.14, // generally faster than the unit can turn
+        .minFiringRange                   = 350,
+        .maxFiringRange                   = 1500,
+        .maxScanRange                     = 2000, // a good rule of thumb for this is maxFringRange + leash distance of element
+		.prefFiringRange				  = 0.6, // 0.7 is default							
+        .projectileName                   = "PRO_UEF_Super_01_Primary", // Projectile used for leading shots
+    //    .yawHash                          = "UEF_HeavyMech_Torso_Yaw_01_Aux_SH_Jnt",                // Torso Twist using Steering did not work; disabled
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Super 01 Torso Weapon (Used for Rotating Upper Body) ----------
+
+export ModuleTemplate WEP_UEF_Super_01_Torso =
+{
+    .templateID              = "WEP_UEF_Super_01_Torso",
+    .name                    = "",
+    .activateFunction        = "",
+    .updateFunction          = "UnitFacingUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 3.14,
+        .firingArcPitchClamp              = 1.30,
+        .firingArcTurnRate                = 1.04,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1900,
+        .projectileName                   = "PRO_UEF_Armor_02_Primary", // Projectile used for leading shots
+        .yawHash                          = "UEF_Super_Torso_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret		
+        .pitchHash                        = "",              // the named node in the model that corresponds to the pitch of this turret
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Super 01 Primary 01 Weapon (Prototype Plasma Cannons) ----------
+
+export ModuleTemplate WEP_UEF_Super_01_P01 =
+{
+    .templateID              = "WEP_UEF_Super_01_P01",
+    .name                    = "TXT_WEP_UEF_Super_01_P01_NAME",
+    .description         	 = "TXT_WEP_UEF_Super_01_P01_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .cooldown                         = 8.0,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.2,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = 3.14,
+        .firingArcPitchClamp              = 0.26,
+        .firingArcTurnRate                = 0.78,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .projectileName                   = "PRO_UEF_Super_01_Primary",
+        .yawHash                          = "UEF_Super_RightArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "UEF_Super_RightArm_Pitch_02_Aux_SH_Jnt",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Super 01 Primary 02 Weapon (Prototype Plasma Cannons) ----------
+
+export ModuleTemplate WEP_UEF_Super_01_P02 =
+{
+    .templateID              = "WEP_UEF_Super_01_P02",
+    .name                    = "TXT_WEP_UEF_Super_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Super_01_Primary_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+{
+        .cooldown                         = 8.0,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.2,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = 3.14,
+        .firingArcPitchClamp              = 0.26,
+        .firingArcTurnRate                = 0.78,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .projectileName                   = "PRO_UEF_Super_01_Primary",
+        .yawHash                          = "UEF_Super_LeftArm_Yaw_01_Aux_SH_Jnt",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "UEF_Super_LeftArm_Pitch_01_Aux_SH_Jnt",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Artillery 01 (Odyssey / Stormbreaker) --------------------
+
+// ---------- UEF Artillery 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Artillery_01 =
+{
+    .templateID                = "STE_UEF_Artillery_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 400,
+        .maxFiringRange                   = 1600,
+        .maxScanRange                     = 2000, // Lower than normal; keep more static
+		.prefFiringRange				  = 0.85, // 0.7 is default			
+        .projectileName                   = "PRO_UEF_Armor_01_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,   // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, 	 // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Artillery 01 Primary Weapon (Artillery Cannon) ----------
+
+export ModuleTemplate WEP_UEF_Artillery_01_Primary =
+{
+    .templateID              = "WEP_UEF_Artillery_01_Primary",
+    .name                    = "TXT_WEP_UEF_Artillery_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Artillery_01_Primary_DESC",	
+    .activateFunction        = "",
+    .updateFunction          = "ArtilleryTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eClampPitchUp | WeaponModuleFlags.eFireAtRadarContact,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.0,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 3.14,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 3.14,                           // this has to pitch nearly vertical to hit anything close
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 100,
+        .maxFiringRange                   = 1700,
+        .maxScanRange                     = 1800,
+        .scatter                          = 125.0,                          // random scatter added to the projectile target location to simulate inaccuracy (and spread the damage a bit)
+        .projectileName                   = "PRO_UEF_Artillery_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.High,   // Infantry
+            TargetPriorities.Normal, // Armor
+            TargetPriorities.Normal, // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, 	 // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Sniper 01 (Orion) --------------------
+
+// ---------- UEF Sniper 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Sniper_01 =
+{
+    .templateID                = "STE_UEF_Sniper_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 150,
+        .maxFiringRange                   = 1300, 
+        .maxScanRange                     = 1700, // a good rule of thumb for this is maxFIringRange + leash distance of element
+		.prefFiringRange				  = 0.85, // 0.7 is default			
+        .projectileName                   = "PRO_UEF_Armor_01_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- UEF Sniper 01 Primary Weapon (Missile Rack) ----------
+
+export ModuleTemplate WEP_UEF_Sniper_01_Primary =
+{
+    .templateID              = "WEP_UEF_Sniper_01_Primary",
+    .name                    = "TXT_WEP_UEF_Sniper_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Sniper_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 2,
+        .durationOrInterpulseCooldown     = 0.2,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.31,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1400,
+        .maxScanRange                     = 1500,
+        .projectileName                   = "PRO_UEF_Sniper_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_03","FireNode_01","FireNode_02","FireNode_04", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.High,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.High, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Recon 01 (Tracker) --------------------
+
+// ---------- UEF Recon 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Recon_01 =
+{
+    .templateID                = "STE_UEF_Recon_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.104719755,
+        .firingArcPitch                   = 0.104719755,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.570796327,
+        .firingArcTurnRate                = 6.283185307,
+        .minFiringRange                   = 150, 
+        .maxFiringRange                   = 750, 
+        .maxScanRange                     = 1150, //slightly lower leash
+		.prefFiringRange				  = 0.80, // 0.7 is default			
+        .projectileName                   = "PRO_GEN_Vehicle_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Recon 01 Primary Weapon (Light Autocannon) ----------
+
+export ModuleTemplate WEP_UEF_Recon_01_Primary =
+{
+    .templateID              = "WEP_UEF_Recon_01_Primary",
+    .name                    = "TXT_WEP_UEF_Recon_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Recon_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 4,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 850,
+        .maxScanRange                     = 950,
+        .projectileName                   = "PRO_UEF_Recon_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01", // the named node in the model that corresponds to the pitch of this turret
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_Recon",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	0.375,		
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.Normal,    // Armor
+            TargetPriorities.Normal,       // Small Mecha
+            TargetPriorities.Normal,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Recon 02 Primary Weapon (Anti-Armor Cannon) ----------
+
+export ModuleTemplate WEP_UEF_Recon_02_Primary =
+{
+    .templateID              = "WEP_UEF_Recon_02_Primary",
+    .name                    = "TXT_WEP_UEF_Recon_02_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Recon_02_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eScanning,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4.0,
+        .numPulsesPerFiring               = 3,
+        .durationOrInterpulseCooldown     = 0.2,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.05,
+        .firingArcTurnRate                = 1.57,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 900,
+        .maxScanRange                     = 1000,
+        .projectileName                   = "PRO_UEF_Recon_02_Primary",
+        .yawHash                          = "Turret_Yaw_01",
+        .pitchHash                        = "Turret_Pitch_01",
+        //.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_Recon", In Projectile
+        //.startOfFiringLifeTime			  =	0.375,
+        .firingNodeHashes                 =
+        {
+            "FireNode_01",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.High,      // Armor
+            TargetPriorities.High,      // Small Mecha
+            TargetPriorities.Normal,    // Big Mecha
+            TargetPriorities.Ignore,    // Air
+            TargetPriorities.Ignore,    // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,       // Building
+            TargetPriorities.Normal,    // Defensive Building
+            TargetPriorities.Ignore,    // Worker
+        },
+    }
+};
+
+
+// -------------------- UEF AntiAir 01 (Aegis) --------------------
+
+// ---------- UEF AntiAir 01 Steering ----------
+
+export ModuleTemplate STE_UEF_AntiAir_01 =
+{
+    .templateID                = "STE_UEF_AntiAir_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 75,
+        .maxFiringRange                   = 1100,
+        .maxScanRange                     = 1600, // a good rule of thumb for this is maxFIringRange + leash distance of element
+        .projectileName                   = "PRO_UEF_Armor_01_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF AntiAir 01 Primary Weapon (4-Barrel MG) ----------
+
+export ModuleTemplate WEP_UEF_AntiAir_01_Primary =
+{
+    .templateID              = "WEP_UEF_AntiAir_01_Primary",
+    .name                    = "TXT_WEP_UEF_AntiAir_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_AntiAir_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = 0,
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3,
+        .numPulsesPerFiring               = 8,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1.0,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 2.35,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_UEF_AntiAir_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_GenericMachineGun",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	0.875,			
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01", "FireNode_02", "FireNode_03", "FireNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.High, // Air
+            TargetPriorities.Normal, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low, // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+
+// -------------------- UEF Landship 01 (Goliath) --------------------
+
+// ---------- UEF Landship 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Landship_01 =
+{
+    .templateID                = "STE_UEF_Landship_01",
+    .name                      = "",
+    .description               = "",
+    .activateFunction          = "",
+    .updateFunction            = "SteeringModuleUpdate",
+    .moduleFlags               = WeaponModuleFlags.eSteering | WeaponModuleFlags.eSteeringNonStrafe,
+    .templateData              = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.10,
+        .firingArcPitch                   = 0.10,
+        .firingArcYawClamp                = -1,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.28,
+        .minFiringRange                   = 250,
+        .maxFiringRange                   = 1100,
+        .maxScanRange                     = 1600,
+		.prefFiringRange				  = 0.45, // 0.7 is default									
+        .projectileName                   = "PRO_UEF_Armor_01_Steering",
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+/* UEF Landship 01 Yaw/Pitch and Firenode Layout
+
+Primary 01 - Top Front -  Yaw01 - FN01 FN02
+
+Secondary 01 - Bottom Front - Yaw14 - FN31 FN32
+Secondary 02 - Top Back - Yaw03 - FN05 FN06
+Secondary 03 - Front Left - Yaw04 - FN07 FN08
+Secondary 04 - Front Right - Yaw05 - FN09 FN10
+Secondary 05 - Left Middle - Yaw06 - FN23 FN24 FN25 FN26 - Quad
+Secondary 06 - Right Middle - Yaw07 - FN27 FN28 FN28 FN30 - Quad
+Secondary 07 - Left Back - Yaw08 - FN19 FN20
+Secondary 08 - Right Back - Yaw09 - FN21 FN22
+Secondary 09 - Bottom Front Left - YAW10 - FN11 FN12
+Secondary 10 - Bottom Front Right - YAW11 - FN13 FN14
+Secondary 11 - Bottom Back Left - YAW12 - FN15 FN16
+Secondary 12 - Bottom Back Right - YAW13 - FN17 FN18
+
+Teriary 01 - Top Middle - Yaw02 - FN03 FN04
+*/
+
+
+// ---------- UEF Landship 01 Primary Weapon (Cannon) ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_P01 =
+{
+    .templateID              = "WEP_UEF_Landship_01_P01",
+    .name                    = "TXT_WEP_UEF_Landship_01_P01_NAME",
+    .description         	 = "TXT_WEP_UEF_Landship_01_P01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eLinkedFire, // Fires Per FireNode! 2x the damage!
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.0,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 4.10,                           // -1.0 == no clamp
+        .firingArcPitchClamp              = 1.57,
+		.firingArcTurnRate                = 0.78,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1300,
+        .projectileName                   = "PRO_UEF_Landship_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "Turret_Pitch_01",              // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01", "FireNode_02",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, // Infantry
+            TargetPriorities.Normal,   // Armor
+            TargetPriorities.Normal,   // Small Mecha
+            TargetPriorities.Normal, // Big Mecha
+            TargetPriorities.Ignore, // Air
+            TargetPriorities.Ignore, // Drone
+            TargetPriorities.Ignore, // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- UEF Landship 01 SECONDARY Weapon Modules (Small Turrets)----------
+
+// ---------- UEF Landship 01 Weapon Secondary BASE (Template Data) ----------
+
+WeaponModuleTemplate WEP_UEF_Landship_01_SBASE_TemplateData = 
+{
+    .cooldown                         = 3,
+    .numPulsesPerFiring               = 1,
+    .durationOrInterpulseCooldown     = 0.0,
+    .firingArcYaw                     = 0.01,
+    .firingArcPitch                   = 0.01,
+	.firingArcYawClamp                = 3.14,
+	.firingArcPitchClamp              = 1.04,
+	.firingArcTurnRate                = 0.78,
+	.minFiringRange                   = 0,
+	.maxFiringRange                   = 1200,
+	.maxScanRange                     = 1300,
+    .projectileName                   = "PRO_UEF_Landship_01_Secondary",
+    .yawHash                          = "Turret_Yaw_00",                // the named node in the model that corresponds to the yaw of this turret
+    .pitchHash                        = "Turret_Pitch_00",              // the named node in the model that corresponds to the pitch of this turret
+    .firingNodeHashes                 =                                 // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+    {
+        "FireNode_01", "FireNode_02",
+    },
+    .targetPriorityByCategory =
+	{
+		TargetPriorities.Normal, // Infantry
+		TargetPriorities.Normal,   // Armor
+		TargetPriorities.Normal,   // Small Mecha
+		TargetPriorities.Normal, // Big Mecha
+		TargetPriorities.Ignore, // Air
+		TargetPriorities.Ignore, // Drone
+		TargetPriorities.Ignore, // Projectile
+		TargetPriorities.Low,    // Building
+		TargetPriorities.Normal, // Defensive Building
+		TargetPriorities.Ignore, // Worker
+	},
+};
+
+ModuleTemplate WEP_UEF_Landship_01_SBASE = 
+{
+    .templateID              = "WEP_UEF_Landship_01_SBASE",
+    .name                  	 = "<WEP_UEF_Landship_01_SBASE>",
+    .description         	 = "<WEP_UEF_Landship_01_SBASE>",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .moduleFlags             = WeaponModuleFlags.eLinkedFire, // Fires Per FireNode! 2x to 4x the damage!
+    .templateData            = WEP_UEF_Landship_01_SBASE_TemplateData,
+};
+
+// ---------- UEF Landship Weapon Secondary 01 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S01 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S01",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_14",               
+        .pitchHash          = "Turret_Pitch_14",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_31", "FireNode_32",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 02 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S02 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S02",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_03",                
+        .pitchHash          = "Turret_Pitch_03",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_05", "FireNode_06",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 03 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S03 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S03",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_04",               
+        .pitchHash          = "Turret_Pitch_04",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_07", "FireNode_08",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 04 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S04 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S04",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_05",               
+        .pitchHash          = "Turret_Pitch_05",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_09", "FireNode_10",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 05 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S05 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S05",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_06",               
+        .pitchHash          = "Turret_Pitch_06",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_23", "FireNode_24", "FireNode_25", "FireNode_26",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 06 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S06 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S06",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_07",               
+        .pitchHash          = "Turret_Pitch_07",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_27", "FireNode_28", "FireNode_29", "FireNode_30",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 07 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S07 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S07",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_08",               
+        .pitchHash          = "Turret_Pitch_08",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_19", "FireNode_20",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 08 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S08 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S08",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_09",               
+        .pitchHash          = "Turret_Pitch_09",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_21", "FireNode_22",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 09 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S09 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S09",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_10",               
+        .pitchHash          = "Turret_Pitch_10",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_11", "FireNode_12",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 10 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S10 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S10",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_11",               
+        .pitchHash          = "Turret_Pitch_11",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_13", "FireNode_14",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 11 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S11 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S11",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_12",               
+        .pitchHash          = "Turret_Pitch_12",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_15", "FireNode_16",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Secondary Weapon 12 ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_S12 = update(WEP_UEF_Landship_01_SBASE)
+{
+    .templateID              = "WEP_UEF_Landship_01_S12",
+    .templateData            = update(WEP_UEF_Landship_01_SBASE_TemplateData)
+	{
+        .yawHash 			= "Turret_Yaw_13",               
+        .pitchHash          = "Turret_Pitch_13",
+        .firingNodeHashes 	=  
+        {
+            "FireNode_17", "FireNode_18",
+        },	
+	}
+};
+
+// ---------- UEF Landship 01 Tertiary Weapon (Dual Missiles) ----------
+
+export ModuleTemplate WEP_UEF_Landship_01_T01 =
+{
+    .templateID              = "WEP_UEF_Landship_01_T01",
+    .name                    = "TXT_WEP_UEF_Landship_01_T01_NAME",
+    .description         	 = "TXT_WEP_UEF_Landship_01_T01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 2,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = -1,      
+        .firingArcPitchClamp              = 4.1,      
+        .firingArcTurnRate                = 3.14,      
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1500,
+        .maxScanRange                     = 1600,
+        .projectileName                   = "PRO_UEF_Landship_01_Tertiary",
+        .yawHash                          = "Turret_Yaw_02", 
+        .pitchHash                        = "Turret_Pitch_02",
+        .firingNodeHashes                 =   
+        {
+            "FireNode_03",
+            "FireNode_04", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,    // Infantry
+            TargetPriorities.Ignore,    // Armor
+            TargetPriorities.Ignore,       // Small Mecha
+            TargetPriorities.Ignore,       // Big Mecha
+            TargetPriorities.High,       // Air
+            TargetPriorities.Low,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Ignore,    // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Gunship 01 (Thunderhawk) --------------------
+
+// ---------- UEF Gunship 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Gunship_01 =
+{
+    .templateID             = "STE_UEF_Gunship_01",
+    .name                   = "",
+    .description            = "Pretty much doesn't respond to targets",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.104719755,
+        .firingArcPitch                   = 0.104719755,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.283185307, // generally faster than the unit can turn
+        .minFiringRange                   = 400,
+        .maxFiringRange                   = 900, // original 800
+        .maxScanRange                     = 1500, // original 1400
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.High,    // Armor
+            TargetPriorities.High,       // Small Mecha
+            TargetPriorities.High,       // Big Mecha
+            TargetPriorities.Low,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Gunship 01 Primary Weapon (Light Autocannon) ----------
+
+export ModuleTemplate WEP_UEF_Gunship_01_Primary =
+{
+    .templateID              = "WEP_UEF_Gunship_01_Primary",
+    .name                    = "TXT_WEP_UEF_Gunship_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Gunship_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 3.0,
+        .numPulsesPerFiring               = 5,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 0.01,
+        .firingArcPitch                   = 0.01,
+        .firingArcYawClamp                = 2.35,
+        .firingArcPitchClamp              = 3.14,
+        .firingArcTurnRate                = 3.14,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1000,
+        .maxScanRange                     = 1100,
+        .projectileName                   = "PRO_UEF_Gunship_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                
+        .pitchHash                        = "Turret_Pitch_01", 
+		.startOfFiringFXHash        	  = "FX_MuzzleFlash_UEF_Gunship",	// Muzzleflash disabled in projectile and moved here
+		.startOfFiringLifeTime			  =	0.50,			
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_01",
+            "FireNode_02", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.High,    // Armor
+            TargetPriorities.High,       // Small Mecha
+            TargetPriorities.High,       // Big Mecha
+            TargetPriorities.Ignore,       // Air
+            TargetPriorities.Ignore,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------- UEF Gunship 01 Secondary Weapons (Dual Missiles) ----------
+
+export ModuleTemplate WEP_UEF_Gunship_01_S01 =
+{
+    .templateID              = "WEP_UEF_Gunship_01_S01",
+    .name                    = "TXT_WEP_UEF_Gunship_01_S01_NAME",
+    .description         	 = "TXT_WEP_UEF_Gunship_01_S01_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.0,
+        .firingArcYaw                     = 1.570796, // wide firing angle
+        .firingArcPitch                   = 1.570796, // wide firing angle
+        .firingArcYawClamp                = 0.0,      // not steerable
+        .firingArcPitchClamp              = 0.0,      // not steerable
+        .firingArcTurnRate                = 0.0,      // I said not steerable
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1000,
+        .maxScanRange                     = 1100,
+        .projectileName                   = "PRO_UEF_Gunship_01_Secondary",
+        .yawHash                          = "Turret_Yaw_02", // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =     // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_03",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.High,    // Armor
+            TargetPriorities.High,       // Small Mecha
+            TargetPriorities.High,       // Big Mecha
+            TargetPriorities.Normal,       // Air
+            TargetPriorities.Low,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+export ModuleTemplate WEP_UEF_Gunship_01_S02 =
+{
+    .templateID              = "WEP_UEF_Gunship_01_S02",
+    .name                    = "TXT_WEP_UEF_Gunship_01_S02_NAME",
+    .description         	 = "TXT_WEP_UEF_Gunship_01_S02_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 4,
+        .numPulsesPerFiring               = 1,
+        .durationOrInterpulseCooldown     = 0.0,
+        .firingArcYaw                     = 1.570796, // wide firing angle
+        .firingArcPitch                   = 1.570796, // wide firing angle
+        .firingArcYawClamp                = 0.0,      // not steerable
+        .firingArcPitchClamp              = 0.0,      // not steerable
+        .firingArcTurnRate                = 0.0,      // I said not steerable
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1000,
+        .maxScanRange                     = 1100,
+        .projectileName                   = "PRO_UEF_Gunship_01_Secondary",
+        .yawHash                          = "Turret_Yaw_03", // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =     // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_04",
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal,    // Infantry
+            TargetPriorities.High,    // Armor
+            TargetPriorities.High,       // Small Mecha
+            TargetPriorities.High,       // Big Mecha
+            TargetPriorities.Normal,       // Air
+            TargetPriorities.Low,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Low,    // Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Low, // Worker
+        },
+    }
+};
+
+
+// -------------------- UEF Bomber 01 (Phoenix) --------------------
+
+// ---------- UEF Bomber 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Bomber_01 =
+{
+    .templateID             = "STE_UEF_Bomber_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 3.14,
+        .firingArcTurnRate                = 6.283185307, // generally faster than the unit can turn
+        .minFiringRange                   = 0,
+        .prefFiringRange                  = 0.0f, // we want to fly over the target
+        .maxFiringRange                   = 1500, // add a little in because of our altitude, was 1100
+        .maxScanRange                     = 1800, //orig 1300
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, 	// Infantry
+            TargetPriorities.Normal,  	// Armor
+            TargetPriorities.Normal, 	// Small Mecha
+            TargetPriorities.Normal,  	// Big Mecha
+            TargetPriorities.Ignore,	// Air
+            TargetPriorities.Ignore,   	// Drone
+            TargetPriorities.Ignore,	// Projectile
+            TargetPriorities.Low,   	// Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+
+// ---------- UEF Bomber 01 Primary Weapon (Bombs) ----------
+
+export ModuleTemplate WEP_UEF_Bomber_01_Primary =
+{
+    .templateID              = "WEP_UEF_Bomber_01_Primary",
+    .name                    = "TXT_WEP_UEF_Bomber_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Bomber_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 8,
+        .numPulsesPerFiring               = 2,
+        .durationOrInterpulseCooldown     = 0.5,
+        .firingArcYaw                     = 0.2,
+        .firingArcPitch                   = 0.2,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 6.10,
+        .firingArcTurnRate                = 6.10,
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1500,
+        .maxScanRange                     = 1800,
+        .scatter                          = 125,	
+        .projectileName                   = "PRO_UEF_Bomber_01_Primary",
+        .yawHash                          = "Turret_Yaw_01",                // the named node in the model that corresponds to the yaw of this turret
+        .pitchHash                        = "", // the named node in the model that corresponds to the pitch of this turret
+        .firingNodeHashes                 =                                    // the named node(s) in the model that correspond to the point and direction the projectile will exit the barrel 
+        {
+            "FireNode_03",
+            "FireNode_04", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Normal, 	// Infantry
+            TargetPriorities.Normal,  	// Armor
+            TargetPriorities.Normal, 	// Small Mecha
+            TargetPriorities.Normal,  	// Big Mecha
+            TargetPriorities.Ignore,	// Air
+            TargetPriorities.Ignore,   	// Drone
+            TargetPriorities.Ignore,	// Projectile
+            TargetPriorities.Low,   	// Building
+            TargetPriorities.Normal, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// -------------------- UEF Fighter 01 (Eagle) --------------------
+
+// ---------- UEF Fighter 01 Steering ----------
+
+export ModuleTemplate STE_UEF_Fighter_01 =
+{
+    .templateID             = "STE_UEF_Fighter_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "",
+    .updateFunction         = "SteeringModuleUpdate",
+    .moduleFlags            = WeaponModuleFlags.eSteering,
+    .templateData           = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 0.5,
+        .numPulsesPerFiring               = 0,
+        .durationOrInterpulseCooldown     = 0,
+        .firingArcYaw                     = 0.1,
+        .firingArcPitch                   = 0.1,
+        .firingArcYawClamp                = -1.0,
+        .firingArcPitchClamp              = 1.57,
+        .firingArcTurnRate                = 6.283185307, // generally faster than the unit can turn
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1200,
+        .maxScanRange                     = 1400,
+        .prefFiringRange                  = 0.0f, // get close in air-to-air battles	
+        .targetPriorityByCategory =
+        {
+			TargetPriorities.Ignore,    // Infantry
+            TargetPriorities.Ignore,    // Armor
+            TargetPriorities.Ignore,    // Small Mecha
+            TargetPriorities.Ignore,    // Big Mecha
+            TargetPriorities.High,      // Air
+            TargetPriorities.Low,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Ignore,    // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Ignore,    // Worker
+        },
+    }
+};
+
+
+// ---------- UEF Fighter 01 Primary Weapon (Dual Missiles) ----------
+
+export ModuleTemplate WEP_UEF_Fighter_01_Primary =
+{
+    .templateID              = "WEP_UEF_Fighter_01_Primary",
+    .name                    = "TXT_WEP_UEF_Fighter_01_Primary_NAME",
+    .description         	 = "TXT_WEP_UEF_Fighter_01_Primary_DESC",		
+    .activateFunction        = "",
+    .updateFunction          = "DirectFireTurretWeaponUpdate",
+    .templateData            = cons(WeaponModuleTemplate) 
+    {
+        .cooldown                         = 6,
+        .numPulsesPerFiring               = 2,
+        .durationOrInterpulseCooldown     = 0.125,
+        .firingArcYaw                     = 1.57,
+        .firingArcPitch                   = 1.57,
+        .firingArcYawClamp                = 0.0,      
+        .firingArcPitchClamp              = 0.0,      
+        .firingArcTurnRate                = 0.0,    
+        .minFiringRange                   = 0,
+        .maxFiringRange                   = 1300,
+        .maxScanRange                     = 1400,
+        .projectileName                   = "PRO_UEF_Fighter_01_Primary",
+        .yawHash                          = "Turret_Yaw_01", 
+        .pitchHash                        = "", 
+        .firingNodeHashes                 =     
+        {
+            "FireNode_01",
+            "FireNode_02", 
+        },
+        .targetPriorityByCategory =
+        {
+            TargetPriorities.Ignore,    // Infantry
+            TargetPriorities.Ignore,    // Armor
+            TargetPriorities.Ignore,       // Small Mecha
+            TargetPriorities.Ignore,       // Big Mecha
+            TargetPriorities.High,       // Air
+            TargetPriorities.Low,       // Drone
+            TargetPriorities.Ignore,    // Projectile
+            TargetPriorities.Ignore,    // Building
+            TargetPriorities.Ignore, // Defensive Building
+            TargetPriorities.Ignore, // Worker
+        },
+    }
+};
+
+// ---------------------------------------- UEF CONSTRUCTION ----------------------------------------
+
+export ModuleTemplate Con_UEF_HQ =
+{
+    .templateID             = "Con_UEF_HQ",
+    .name                   = "TXT_CONSTRUCTION_HQ",
+    .description            = "TXT_CONSTRUCTION_HQ_DESC",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionList   =
+        {
+            "BLD_UEF_Ore_01",
+            "BLD_UEF_Gas_01",
+            "BLD_UEF_Refinery_01",
+			"BLD_UEF_Prod_Light_01",
+            "BLD_UEF_Prod_Medium_01",
+            "BLD_UEF_Prod_Heavy_01",
+            "BLD_UEF_Prod_Air_01",
+            "BLD_UEF_Prod_Super_01",			
+            "BLD_UEF_Direct_01",
+            "BLD_UEF_AntiAir_01",
+            "BLD_UEF_Artillery_01",
+            "BLD_UEF_Artillery_02",			
+			"BLD_UEF_Radar_01",
+            "BLD_UEF_Logistics_01",
+            "BLD_UEF_Tech_01",			
+			"BLD_UEF_DEV_CON_ALL",
+        },
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+    },
+};
+
+export ModuleTemplate Con_UEF_Light =
+{
+    .templateID          = "Con_UEF_Light",
+    .name                = "TXT_CONSTRUCTION_UEF_LIGHT",
+    .description         = "TXT_CONSTRUCTION_UEF_LIGHT_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_UEF_Swarm_01",
+            "UNT_UEF_Swarm_02",			
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+
+    },
+};
+
+export ModuleTemplate Con_UEF_Light_Coordination =
+{
+    .templateID             = "Con_UEF_Light_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_UEF_Swarm_01",
+            "UNT_UEF_Swarm_02",			
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+export ModuleTemplate Con_UEF_Med   =
+{
+    .templateID          = "Con_UEF_Med",
+    .name                = "TXT_CONSTRUCTION_UEF_MED",
+    .description         = "TXT_CONSTRUCTION_UEF_MED_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_UEF_Armor_01",
+            "UNT_UEF_Recon_01",			
+            "UNT_UEF_AntiAir_01",
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+ 
+    },
+};
+
+export ModuleTemplate Con_UEF_Med_Coordination =
+{
+    .templateID             = "Con_UEF_Med_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_UEF_Armor_01",
+            "UNT_UEF_Recon_01",			
+            "UNT_UEF_AntiAir_01",
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+export ModuleTemplate Con_UEF_Heavy =
+{
+    .templateID          = "Con_UEF_Heavy",
+    .name                = "TXT_CONSTRUCTION_UEF_HEAVY",
+    .description         = "TXT_CONSTRUCTION_UEF_HEAVY_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_UEF_Sniper_01",
+            "UNT_UEF_Artillery_01",						
+            "UNT_UEF_Armor_02",						
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+    },
+};
+
+export ModuleTemplate Con_UEF_Heavy_Coordination =
+{
+    .templateID             = "Con_UEF_Heavy_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_UEF_Sniper_01",
+            "UNT_UEF_Artillery_01",						
+            "UNT_UEF_Armor_02",						
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+export ModuleTemplate Con_UEF_Air   =
+{
+    .templateID          = "Con_UEF_Air",
+    .name                = "TXT_CONSTRUCTION_UEF_AIR",
+    .description         = "TXT_CONSTRUCTION_UEF_AIR_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   =
+        {
+            "UNT_UEF_Scout_01",
+            "UNT_UEF_Gunship_01",
+            "UNT_UEF_Fighter_01",
+            "UNT_UEF_Bomber_01",
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+    },
+};
+
+export ModuleTemplate Con_UEF_Air_Coordination =
+{
+    .templateID             = "Con_UEF_Air_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate )
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   =
+        {
+            "UNT_UEF_Scout_01",
+            "UNT_UEF_Gunship_01",
+            "UNT_UEF_Fighter_01",
+            "UNT_UEF_Bomber_01",
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+export ModuleTemplate Con_UEF_Super =
+{
+    .templateID          = "Con_UEF_Super",
+    .name                = "TXT_CONSTRUCTION_UEF_SUPER",
+    .description         = "TXT_CONSTRUCTION_UEF_SUPER_DESC",
+    .activateFunction    = "ActivateCon",
+    .updateFunction      = "UpdateConSerial",
+    .templateData        = cons( ConstructionModuleTemplate )
+    {
+        .constructionList   = 
+        {
+            "UNT_UEF_Super_01",
+            "UNT_UEF_Landship_01",
+        },
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharesProduction,
+        .constructionSpeed  = 1,
+        .repairValue        = 1,
+        .maxRange           = 50,
+    },
+};
+
+export ModuleTemplate Con_UEF_Super_Coordination =
+{
+    .templateID             = "Con_UEF_Super_Coordination",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "ActivateCon",
+    .updateFunction         = "UpdateConSerial",
+    .templateData           = cons( ConstructionModuleTemplate ) 
+    {
+        .constructionFlags  = ConstructionModuleFlags.eConstructsUnits | ConstructionModuleFlags.eSharedProductionTarget,
+        .constructionList   = 
+        {
+            "UNT_UEF_Super_01",
+            "UNT_UEF_Landship_01",
+        },
+        .constructionSpeed  = 0, // I use the value shared from the other factories
+    },
+};
+
+// ---------------------------------------- UEF RESOURCE ----------------------------------------
+
+export ModuleTemplate Res_UEF_HQ =
+{
+    .templateID             = "Res_UEF_HQ",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond =
+        {
+            [Players.Resource.Ore] = 8.0,
+            [Players.Resource.Tech] = 1.0,
+        },
+
+        .grant =
+        {
+            [Players.Resource.Ore] = 400,
+            [Players.Resource.Logistics] = 30,
+        },
+
+        .capacity =
+        {
+            [Players.Resource.Ore]       = 9999,
+            [Players.Resource.Gas]       = 9999,
+            [Players.Resource.Logistics] = 30,
+        },
+
+        .resourceFlags = ResourceModuleTemplateFlags.IsHQ,
+    },
+};
+
+export ModuleTemplate Res_UEF_Log   =
+{
+    .templateID             = "Res_UEF_Log",
+    .name                   = "TXT_GAS_MINE",
+    .description            = "TXT_GAS_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .grant = 
+        {
+            [Players.Resource.Logistics] = 30,
+        }, 
+
+        .capacity = 
+        {
+            [Players.Resource.Logistics] = 30,
+        },
+    },
+};
+
+export ModuleTemplate Res_UEF_Tech  =
+{
+    .templateID             = "Res_UEF_Tech",
+    .name                   = "TXT_TECH_MINE",
+    .description            = "TXT_TECH_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Tech] = 1.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_UEF_Ore_Mine =
+{
+    .templateID             = "Res_UEF_Ore_Mine",
+    .name                   = "TXT_ORE_MINE",
+    .description            = "TXT_ORE_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Ore] = 2.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_UEF_Ore_Mine_Up =
+{
+    .templateID             = "Res_UEF_Ore_Mine_Up",
+    .name                   = "TXT_ORE_MINE",
+    .description            = "TXT_ORE_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Ore] = 3.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_UEF_Gas_Mine =
+{
+    .templateID             = "Res_UEF_Gas_Mine",
+    .name                   = "TXT_GAS_MINE",
+    .description            = "TXT_GAS_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Gas] = 2.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_UEF_Gas_Mine_Up =
+{
+    .templateID             = "Res_UEF_Gas_Mine_Up",
+    .name                   = "TXT_GAS_MINE",
+    .description            = "TXT_GAS_MINE_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+            [Players.Resource.Gas] = 3.0,
+        }
+    },
+};
+
+export ModuleTemplate Res_UEF_Refinery =
+{
+    .templateID             = "Res_UEF_Refinery",
+    .name                   = "TXT_REFINERY_NAME",
+    .description            = "TXT_REFINERY_DESC",
+    .activateFunction       = "OwnedResourceActivate",
+    .updateFunction         = "OwnedResourceUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(ResourceModuleTemplate) 
+    {
+        .perSecond = 
+        {
+          [Players.Resource.Ore] = 1.0,          
+		  [Players.Resource.Gas] = 1.0,
+        }
+    },
+};
+
+// ---------------------------------------- UEF VISIBILITY ----------------------------------------
+
+
+export ModuleTemplate VIS_UEF =
+{
+    .templateID             = "VIS_UEF",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1500,
+        .RadarRadius = 0,
+    },
+};
+
+export ModuleTemplate VIS_UEF_HQ =
+{
+    .templateID             = "VIS_UEF_HQ",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .RegionEyesOnDistance   = 1,
+        .RadarRadius            = 3500,
+    },
+};
+
+export ModuleTemplate VIS_UEF_Radar =
+{
+    .templateID             = "VIS_UEF_Radar",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1500,
+        .RadarRadius = 4500,
+    },
+};
+
+export ModuleTemplate VIS_UEF_AntiAir =
+{
+    .templateID             = "VIS_UEF_AntiAir",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1300,
+        .RadarRadius = 2000,
+    },
+};
+
+export ModuleTemplate VIS_UEF_Artillery =
+{
+    .templateID             = "VIS_UEF_Artillery",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1300,
+        .RadarRadius = 3200,
+    },
+};
+
+export ModuleTemplate VIS_UEF_Defense =
+{
+    .templateID             = "VIS_UEF_Defense",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "VisibilityActivate",
+    .updateFunction         = "VisibilityUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(VisibilityModuleTemplate) 
+    {
+        .EyesOnRadius = 1300,
+    },
+};
+
+// ---------------------------------------- UEF MODIFIERS ----------------------------------------
+
+export ModuleTemplate MOD_UEF_Refinery_BASE =
+{
+    .templateID             = "MOD_UEF_Refinery_BASE",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "RegionModifierActivate",
+    .updateFunction         = "RegionModifierUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(RegionModifierModuleTemplate) 
+    {
+        .modifications = 
+        {
+            {
+                .attribute = GameCoreTypes.ModifierAttributes.OrePerSecond,
+                .amount = 0.50,
+            },
+            {
+                .attribute = GameCoreTypes.ModifierAttributes.GasPerSecond,
+                .amount = 0.50,
+            },
+        },
+    },
+};
+
+export ModuleTemplate MOD_UEF_Refinery_01 = update(MOD_UEF_Refinery_BASE)
+{
+    .templateID = "MOD_UEF_Refinery_01",
+};
+
+export ModuleTemplate MOD_UEF_Refinery_02 = update(MOD_UEF_Refinery_BASE)
+{
+    .templateID = "MOD_UEF_Refinery_02",
+};
+
+export ModuleTemplate MOD_UEF_Starter_01 =
+{
+    .templateID             = "MOD_UEF_Starter_01",
+    .name                   = "",
+    .description            = "",
+    .activateFunction       = "RegionModifierActivate",
+    .updateFunction         = "RegionModifierUpdate",
+    .moduleFlags            = 0,
+    .templateData           = cons(RegionModifierModuleTemplate) 
+    {
+        .modifications = 
+        {
+			{
+                .attribute = GameCoreTypes.ModifierAttributes.CaptureRate,
+                .amount = 0.50,
+            },			
+        },
+    },
+};

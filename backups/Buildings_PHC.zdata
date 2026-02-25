@@ -1,0 +1,598 @@
+schema Buildings;
+
+// ---------- PHC Headquarters 01 ----------
+
+export BuildingTemplate bld_PHC_Nexus =
+{
+    .TemplateID  = "bld_PHC_Nexus",
+    .Name        = "TXT_BLD_PHC_HQ_01_NAME",
+    .Desc        = "TXT_BLD_PHC_HQ_01_DESC",
+    .Asset       = "BLD_PHC_Headquarters_01",
+    .iconID      = "BLD_PHC_HQ_01",
+    .category    = "HQ",
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .Flags       = BuildingFlags.regionCenter | BuildingFlags.loseIfKilled,
+    .Faction     = Players.playerType.PHC,
+    .maxHps      = 10000,
+    .maxShields  = 0,
+    .healRate    = 40,
+    .shieldRate  = 0,
+    .targetingRadius = 50.0f,
+    .radiusFloraCollider = 192.0f,
+    .armor = // each point of armor is ~5% damage reduction from that type of damage (see WeaponDamageTypes)
+    {
+        1, // Kinetic
+        1, // Electromagnetic (EMP)
+        1, // Thermal (fire)
+        1, // Ionic (NYI - special against shields)
+        1, // Explosion (shrapnel, shock)
+    },
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Res_PHC_HQ" },
+            { 1, 0xffffffff, "Con_PHC_HQ" },
+            { 2, 0xffffffff, "VIS_PHC_HQ" },
+
+            // Controls Queuing for Each Unit Type
+            { 3, 0xffffffff, "Con_PHC_Light_Coordination" },
+            { 4, 0xffffffff, "Con_PHC_Med_Coordination" },
+            { 5, 0xffffffff, "Con_PHC_Heavy_Coordination" },
+            { 6, 0xffffffff, "Con_PHC_Air_Coordination" },
+            { 7, 0xffffffff, "Con_PHC_Super_Coordination" },			
+
+			// Support for Dev Con All Building
+            { 8, 0xffffffff, "DEV_CON_ALL_HELPER" },			
+			
+			// Weapons (Turrets)
+            {  9, 0xffffffff, "WEP_PHC_HQ_01_P01" },
+            { 10, 0xffffffff, "WEP_PHC_HQ_01_P02" },
+            { 11, 0xffffffff, "WEP_PHC_HQ_01_P03" },
+            { 12, 0xffffffff, "WEP_PHC_HQ_01_P04" },
+            { 13, 0xffffffff, "WEP_PHC_HQ_01_S01" },
+			
+			// Workers
+            { 14, 0xffffffff, "Worker_HQ_Spawner" },
+        },
+    },
+};
+
+// ---------- PHC DEV Construct All Units ----------
+
+export BuildingTemplate BLD_PHC_DEV_CON_ALL = 
+{
+    .TemplateID  = "BLD_PHC_DEV_CON_ALL",
+    .Name        = "TXT_PHC_DEV_CON_ALL_NAME",
+    .Desc        = "TXT_PHC_DEV_CON_ALL_DESC",
+    .Asset       = "BLD_DEV_Medium_01",
+    .iconID      = "Icon_ResourceScore",
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "Disabled",	
+    .radiusFloraCollider = 192.0f,
+    .Flags       = BuildingFlags.aiForbidden,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost    = 0,
+    .gasCost    = 0,
+    .timeCost    = 1,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 1, 0xffffffff, "DEV_CON_ALL" },
+        },
+    },
+};
+
+// ---------- PHC Production Light 01 ----------
+
+export BuildingTemplate BLD_PHC_Prod_Light_01 = 
+{
+    .TemplateID  = "BLD_PHC_Prod_Light_01",
+    .Name        = "TXT_BLD_PHC_Prod_Light_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Prod_Light_01_DESC",
+    .Asset       = "BLD_PHC_Prod_Light_01",
+    .iconID      = "BLD_PHC_Prod_Light_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.PHC,
+    .radiusFloraCollider = 192.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost	 = 400,
+    .gasCost   	 = 0,
+    .timeCost    = 25,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "Con_PHC_Light" },
+        },
+    },
+};
+
+// ---------- PHC Production Medium 01 ----------
+
+export BuildingTemplate BLD_PHC_Prod_Medium_01 = 
+{
+    .TemplateID  = "BLD_PHC_Prod_Medium_01",
+    .Name        = "TXT_BLD_PHC_Prod_Medium_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Prod_Medium_01_DESC",
+    .Asset       = "BLD_PHC_Prod_Medium_01",
+    .iconID      = "BLD_PHC_Prod_Medium_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Prod_Light_01",		
+    .radiusFloraCollider = 192.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 600,
+    .gasCost     = 0,
+    .timeCost    = 35,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "Con_PHC_Med" },
+        },
+    },
+};
+
+// ---------- PHC Production Heavy 01 ----------
+
+export BuildingTemplate BLD_PHC_Prod_Heavy_01 = 
+{
+    .TemplateID  = "BLD_PHC_Prod_Heavy_01",
+    .Name        = "TXT_BLD_PHC_Prod_Heavy_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Prod_Heavy_01_DESC",
+    .Asset       = "BLD_PHC_Prod_Heavy_01",
+    .iconID      = "BLD_PHC_Prod_Heavy_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Prod_Medium_01",		
+    .radiusFloraCollider = 192.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 500,
+    .gasCost     = 500,
+    .timeCost    = 45,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "Con_PHC_Heavy" },
+        },
+    },
+};
+
+// ---------- PHC Production Flying 01 ----------
+
+export BuildingTemplate BLD_PHC_Prod_Air_01 =
+{
+    .TemplateID  = "BLD_PHC_Prod_Air_01",
+    .Name        = "TXT_BLD_PHC_Prod_Air_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Prod_Air_01_DESC",
+    .Asset       = "BLD_PHC_Prod_Air_01",
+    .iconID      = "BLD_PHC_Prod_Air_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Prod_Medium_01",		
+    .radiusFloraCollider = 192.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 400,
+    .gasCost     = 600,
+    .timeCost    = 45,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "Con_PHC_Air" },
+        },
+    },
+};
+
+// ---------- PHC Production Super 01 ----------
+
+export BuildingTemplate BLD_PHC_Prod_Super_01 = 
+{
+    .TemplateID  = "BLD_PHC_Prod_Super_01",
+    .Name        = "TXT_BLD_PHC_Prod_Super_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Prod_Super_01_DESC",
+    .Asset       = "BLD_PHC_Prod_Super_01",
+    .iconID      = "BLD_PHC_Prod_Super_01",
+    .category    = "UnitProduction",
+    .Faction     = Players.playerType.PHC,
+    //.prereq      = "",
+    .radiusFloraCollider = 160.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_02",
+    .oreCost     = 500,
+    .gasCost     = 750,
+    .timeCost    = 65,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 160.0f,
+    .ModuleTree  =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Con_PHC_Super" },
+        },
+    },
+};
+
+// ---------- PHC Logistics 01 ----------
+
+export BuildingTemplate BLD_PHC_Logistics_01 = 
+{
+    .TemplateID  = "BLD_PHC_Logistics_01",
+    .Name        = "TXT_BLD_PHC_Logistics_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Logistics_01_DESC",
+    .Asset       = "BLD_PHC_Logistics_01",
+    .iconID      = "BLD_PHC_Logistics_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Prod_Light_01",	
+    .radiusFloraCollider = 128.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 75,
+    .gasCost     = 0,
+    .timeCost    = 20,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 128.0f,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "Res_PHC_Log" },
+        },
+    },
+};
+
+// ---------- PHC Tech 01 ----------
+
+export BuildingTemplate BLD_PHC_Tech_01 = 
+{
+    .TemplateID  = "BLD_PHC_Tech_01",
+    .Name        = "TXT_BLD_PHC_Tech_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Tech_01_DESC",
+    .Asset       = "BLD_PHC_Tech_01",
+    .iconID      = "BLD_PHC_Tech_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Gas_01",	
+    .radiusFloraCollider = 128.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 75,
+    .gasCost     = 150,
+    .timeCost    = 30,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 128.0f,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "Res_PHC_Tech" },
+        },
+    },
+};
+
+// ---------- PHC Harvester Ore 01 ----------
+
+export BuildingTemplate BLD_PHC_Ore_01 = 
+{
+    .TemplateID  = "BLD_PHC_Ore_01",
+    .Name        = "TXT_BLD_PHC_Ore_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Ore_01_DESC",
+    .Asset       = "BLD_PHC_Ore_01",
+    .iconID      = "BLD_PHC_Ore_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.PHC,
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.basicVersion,
+    .mapNodeTarget = "nrc_Ore",
+    .oreCost     = 150,
+    .gasCost     = 0,
+    .timeCost    = 15,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "Res_PHC_Ore_Mine" },
+        },
+    },
+};
+
+// ---------- PHC Harvester Gas 01 ----------
+
+export BuildingTemplate BLD_PHC_Gas_01 = 
+{
+    .TemplateID  = "BLD_PHC_Gas_01",
+    .Name        = "TXT_BLD_PHC_Gas_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Gas_01_DESC",
+    .Asset       = "BLD_PHC_Gas_01",
+    .iconID      = "BLD_PHC_Gas_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.PHC,
+    .radiusFloraCollider = 96.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.gasMine | BuildingFlags.basicVersion,
+    .mapNodeTarget = "nrc_Gas",
+    .oreCost     = 225,
+    .gasCost     = 0,
+    .timeCost    = 15,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .ModuleTree =
+    {
+        .Modules = 
+        {
+            { 0, 0xffffffff, "Res_PHC_Gas_Mine" },
+        },
+    },
+};
+
+// ---------- PHC Refinery 01 ----------
+
+export BuildingTemplate BLD_PHC_Refinery_01 =
+{
+    .TemplateID  = "BLD_PHC_Refinery_01",
+    .Name        = "TXT_BLD_PHC_REFINERY_01_NAME",
+    .Desc        = "TXT_BLD_PHC_REFINERY_01_DESC",
+    .Asset       = "BLD_PHC_Refinery_01",
+    .iconID      = "BLD_PHC_Refinery_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.PHC,
+    // .prereq      = "Disabled", - Unlocks Via Technology
+    .radiusFloraCollider = 128.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+    .oreCost     = 150,
+    .gasCost     = 300,
+    .timeCost    = 45,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .ModuleTree =
+    {
+        .Modules =
+        {
+            { 0, 0xffffffff, "MOD_PHC_Refinery_01" },
+        },
+    },
+};
+
+// ---------- PHC Refinery 02 - Orbital Version ----------
+
+export BuildingTemplate BLD_PHC_Refinery_02 =
+{
+    .TemplateID  = "BLD_PHC_Refinery_02",
+    .Name        = "TXT_BLD_PHC_REFINERY_02_NAME",
+    .Desc        = "TXT_BLD_PHC_REFINERY_02_DESC",
+    .Asset       = "BLD_PHC_Refinery_01",
+    .iconID      = "TCH_DEV_Fab_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.PHC,
+    // .prereq      = "Disabled", - Unlocks Via Technology
+    .radiusFloraCollider = 128.0f,
+    .TerrainMod  = "TerrainMod_BLD_Large_01",
+	.Flags       = BuildingFlags.ignoresSlotLimit,	
+    .oreCost     = 150,
+    .gasCost     = 300,
+    .timeCost    = 45,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .ModuleTree =
+    {
+        .Modules =
+        {
+            { 0, 0xffffffff, "MOD_PHC_Refinery_02" },
+        },
+    },
+};
+
+
+// ---------- PHC Amplifier 01 ----------
+
+export BuildingTemplate BLD_PHC_Amplifier_01 =
+{
+    .TemplateID  = "BLD_PHC_Amplifier_01",
+    .Name        = "TXT_BLD_PHC_AMPLIFIER_01_NAME",
+    .Desc        = "TXT_BLD_PHC_AMPLIFIER_01_DESC",
+    .Asset       = "BLD_PHC_Amplifier_01",
+    .iconID      = "BLD_PHC_Amplifier_01",
+    .category    = "Extractors",
+    .Faction     = Players.playerType.PHC,
+    // .prereq      = "Disabled", - Unlocks Via Technology
+    .radiusFloraCollider = 256.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .oreCost     = 300,
+    .gasCost     = 600,
+    .timeCost    = 90,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .targetingRadius = 40.0f,
+    .ModuleTree =
+    {
+        .Modules =
+        {
+            { 0, 0xffffffff, "MOD_PHC_Amplifier_01" },
+        },
+    },
+};
+
+// ---------- PHC Defense Artillery 01 (Smarty System) ----------
+
+
+export BuildingTemplate BLD_PHC_Artillery_01 = 
+{
+    .TemplateID  = "BLD_PHC_Artillery_01",
+    .Name        = "TXT_BLD_PHC_Artillery_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Artillery_01_DESC",
+    .Asset       = "BLD_PHC_Artillery_01",
+    .iconID      = "BLD_PHC_Artillery_01_2",
+    .category    = "Defense",	
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Prod_Heavy_01",
+    .radiusFloraCollider = 64.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.ignoresSlotLimit | BuildingFlags.preventsCapture | BuildingFlags.isDefense,	
+    .oreCost     = 300,
+    .gasCost     = 300,
+    .timeCost    = 60,
+    .logCost     = 2,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "VIS_PHC_Artillery" },	
+            { 1, 0xffffffff, "WEP_PHC_Defense_Artillery_01_P01" },			
+        },
+    },
+};
+
+// ---------- PHC Defense Artillery 02 (Command Post) ----------
+
+
+export BuildingTemplate BLD_PHC_Artillery_02 = 
+{
+    .TemplateID  = "BLD_PHC_Artillery_02",
+    .Name        = "TXT_BLD_PHC_Artillery_02_NAME",
+    .Desc        = "TXT_BLD_PHC_Artillery_02_DESC",
+    .Asset       = "BLD_PHC_Artillery_02",
+    .iconID      = "BLD_PHC_Artillery_02",
+    .category    = "Defense",	
+    .Faction     = Players.playerType.PHC,
+    // .prereq      = "BLD_PHC_Prod_Heavy_01",	- Unlocked by technology
+    .maxHps      = 3000,
+    .healRate    = 12,	
+    .radiusFloraCollider = 64.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.preventsCapture | BuildingFlags.isDefense,	
+    .oreCost     = 600,
+    .gasCost     = 600,
+    .timeCost    = 140,
+    .logCost     = 4,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .targetingRadius = 85.0f,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "VIS_PHC_Artillery" },	
+            { 1, 0xffffffff, "WEP_PHC_Defense_Artillery_02_P01" },
+            { 2, 0xffffffff, "WEP_PHC_Defense_Artillery_02_P02" },			
+            { 3, 0xffffffff, "WEP_PHC_Defense_Artillery_02_P03" },						
+        },
+    },
+};
+
+// ---------- PHC Defense Direct 01 (Carver Turret) ----------
+
+export BuildingTemplate BLD_PHC_Direct_01 = 
+{
+    .TemplateID  = "BLD_PHC_Direct_01",
+    .Name        = "TXT_BLD_PHC_Direct_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Direct_01_DESC",
+    .Asset       = "BLD_PHC_Direct_01",
+    .iconID      = "BLD_PHC_Direct_01",
+    .category    = "Defense",	
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Prod_Light_01",	
+    .radiusFloraCollider = 64.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.ignoresSlotLimit | BuildingFlags.preventsCapture | BuildingFlags.isDefense,	
+    .oreCost     = 300,
+    .gasCost     = 0,
+    .timeCost    = 35,
+    .logCost     = 1,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 96.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "VIS_PHC_Defense" },
+            { 1, 0xffffffff, "WEP_PHC_Defense_Direct_01_P01" },						
+        },
+    },
+};
+
+// ---------- PHC Defense Air 01 (Constable) ----------
+
+export BuildingTemplate BLD_PHC_AntiAir_01 = 
+{
+    .TemplateID  = "BLD_PHC_AntiAir_01",
+    .Name        = "TXT_BLD_PHC_AntiAir_01_NAME",
+    .Desc        = "TXT_BLD_PHC_AntiAir_01_DESC",
+    .Asset       = "BLD_PHC_AntiAir_01",
+    .iconID      = "BLD_PHC_AntiAir_01",
+    .category    = "Defense",	
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Prod_Light_01",		
+    .radiusFloraCollider = 64.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.ignoresSlotLimit | BuildingFlags.preventsCapture | BuildingFlags.isDefense,	
+    .oreCost     = 225,
+    .gasCost     = 0,
+    .timeCost    = 30,
+    .logCost     = 1,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 64.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "VIS_PHC_AntiAir" },
+            { 1, 0xffffffff, "WEP_PHC_Defense_AntiAir_01_P01" },						
+        },
+    },
+};
+
+// ---------- PHC Radar 01 ----------
+
+export BuildingTemplate BLD_PHC_Radar_01 = 
+{
+    .TemplateID  = "BLD_PHC_Radar_01",
+    .Name        = "TXT_BLD_PHC_Radar_01_NAME",
+    .Desc        = "TXT_BLD_PHC_Radar_01_DESC",
+    .Asset       = "BLD_PHC_Radar_01",
+    .iconID      = "BLD_PHC_Radar_01",
+    .category    = "Defense",
+    .Faction     = Players.playerType.PHC,
+    .prereq      = "BLD_PHC_Gas_01",	
+    .radiusFloraCollider = 128.0f,
+    .TerrainMod  = "TerrainMod_BLD_01",
+    .Flags       = BuildingFlags.isDefense,
+    .oreCost     = 200,
+    .gasCost     = 75,
+    .timeCost    = 20,
+    .logCost     = 0,
+    .damageThresholds = { 0.9, 0.75, 0.5, 0.25 },
+    .radarCrossSection = 128.0f,
+    .targetingRadius = 75.0f,
+    .targetingCategory = Modules.TargetingCategory.DefensiveBuilding,
+    .ModuleTree =
+    {
+        .Modules     = 
+        {
+            { 0, 0xffffffff, "VIS_PHC_Radar" },
+        },
+    },
+};
+
+

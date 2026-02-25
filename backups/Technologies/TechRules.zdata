@@ -1,0 +1,47 @@
+schema Technologies;
+
+export TechnologyRules TechRules =
+{
+    .factionTechTrees =
+    {
+        [Players.playerType.UEF] = "TTR_UEF_01",
+        [Players.playerType.PHC] = "TTR_PHC_01",
+        [Players.playerType.SUB] = "TTR_PHC_01",
+    },
+
+    // Cumulative XP thresholds (player XP accumulates, doesn't reset per level)
+    // Per-level cost increases: Levels 1-2 (+100), Levels 3-5 (+125), Levels 6-8 (+150), Levels 9-11 (+175), Levels 12+ (+200)
+    // Level 1-2: 100, 200 | Level 3-5: 325, 450, 575 | Level 6-8: 725, 875, 1025 | Level 9-11: 1200, 1375, 1550 | Level 12+: 1750, 1950...
+    .techUnlockThresholds = {
+		100,      // Level 1  (cost: 100)
+		300,      // Level 2  (cost: 200)
+		625,      // Level 3  (cost: 325)
+		1075,     // Level 4  (cost: 450)
+		1650,     // Level 5  (cost: 575)
+		2375,     // Level 6  (cost: 725)
+		3250,     // Level 7  (cost: 875)
+		4275,     // Level 8  (cost: 1025)
+		5475,     // Level 9  (cost: 1200)
+		6850,     // Level 10 (cost: 1375)
+		8400,     // Level 11 (cost: 1550)
+		10150,    // Level 12 (cost: 1750)
+		12100,    // Level 13 (cost: 1950)
+		14250,    // Level 14 (cost: 2150)
+		16600,    // Level 15 (cost: 2350)
+		19150,    // Level 16 (cost: 2550)
+		21900,    // Level 17 (cost: 2750)
+		24850,    // Level 18 (cost: 2950)
+		28000,    // Level 19 (cost: 3150)
+		31350,    // Level 20 (cost: 3350)
+		34900,    // Level 21 (cost: 3550)
+		38650,    // Level 22 (cost: 3750)
+		42600,    // Level 23 (cost: 3950)
+		46750,    // Level 24 (cost: 4150)
+		51100,    // Level 25 (cost: 4350)
+		55650,    // Level 26 (cost: 4550)
+		60400,    // Level 27 (cost: 4750)
+		65350,    // Level 28 (cost: 4950)
+		70500,    // Level 29 (cost: 5150)
+		75850,    // Level 30 (cost: 5350)
+    },
+};

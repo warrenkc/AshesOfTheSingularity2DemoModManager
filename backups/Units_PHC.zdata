@@ -1,0 +1,273 @@
+schema Units;
+
+
+// ---------- PHC Elements, Units, and Armies ----------
+
+
+// ---------- PHC Swarm 01 (Light Tank Brute) Unit ----------
+export UnitTemplate UNT_PHC_Swarm_01 =
+{
+    .templateHandle = "UNT_PHC_Swarm_01",
+    .formationTemplateID = "AADiamond", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .oreCost    = 125,
+    .gasCost    = 0,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   =
+    {
+        "ELM_PHC_Swarm_01","ELM_PHC_Swarm_01","ELM_PHC_Swarm_01",
+    },
+};
+
+
+// ---------- PHC Support 01 (Fire Support Archer) Unit ----------
+export UnitTemplate UNT_PHC_Support_01 =
+{
+    .templateHandle = "UNT_PHC_Support_01",
+    .formationTemplateID = "AADiamond", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eSupport | UnitRoleFlags.eIndirect,
+    .oreCost    = 200,
+    .gasCost    = 0,
+    .timeCost   = 30,
+    .logCost    = 2,
+    .elements   =
+    {
+        "ELM_PHC_Support_01","ELM_PHC_Support_01","ELM_PHC_Support_01",
+    },
+};
+
+
+// ---------- PHC Armor 01 (Mech Zeus) Unit ----------
+export UnitTemplate UNT_PHC_Armor_01 =
+{
+    .templateHandle = "UNT_PHC_Armor_01",
+    .formationTemplateID = "AADiamond", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .oreCost    = 400,
+    .gasCost    = 0,
+    .timeCost   = 40,
+    .logCost    = 2,
+    .elements   =
+    {
+        "ELM_PHC_Armor_01","ELM_PHC_Armor_01","ELM_PHC_Armor_01",
+    },
+};
+
+// ---------- PHC Artillery 01 (Mech Artemis) Unit ----------
+export UnitTemplate UNT_PHC_Artillery_01 =
+{
+    .templateHandle = "UNT_PHC_Artillery_01",
+    .formationTemplateID = "ArtDuo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eArmor | UnitRoleFlags.eIndirect,
+    .oreCost    = 250,
+    .gasCost    = 300,
+    .timeCost   = 50,
+    .logCost    = 2,
+    .elements   = { "ELM_PHC_Artillery_01", "ELM_PHC_Artillery_01", },
+};
+
+// ---------- PHC Sniper 01 (Tank Destroyer Nemesis) Unit ----------
+export UnitTemplate UNT_PHC_Sniper_01 =
+{
+    .templateHandle = "UNT_PHC_Sniper_01",
+    .formationTemplateID = "ArtDuo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .oreCost    = 100,
+    .gasCost    = 325,
+    .timeCost   = 40,
+    .logCost    = 2,
+    .elements   = { "ELM_PHC_Sniper_01", "ELM_PHC_Sniper_01", },
+};
+
+// ---------- PHC Sniper 02 (Maverick Mech) Unit ----------
+export UnitTemplate UNT_PHC_Sniper_02 =
+{
+    .templateHandle = "UNT_PHC_Sniper_02",
+    .formationTemplateID = "ArtDuo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .oreCost    = 300,
+    .gasCost    = 975,
+    .timeCost   = 120,
+    .logCost    = 4,
+    .elements   = { "ELM_PHC_Sniper_02", "ELM_PHC_Sniper_02", },
+};
+
+// ---------- PHC Sniper 02 Orbital (Maverick Orbital Solo Formation) Unit ----------
+export UnitTemplate UNT_PHC_Sniper_02_Solo =
+{
+    .templateHandle = "UNT_PHC_Sniper_02_Solo",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .templateFlags = UnitTemplateFlags.unbuildable,		
+    .roleFlags  = UnitRoleFlags.eArmor,
+    .oreCost    = 175,
+    .gasCost    = 500,
+    .timeCost   = 75,
+    .logCost    = 0,
+    .elements   = { "ELM_PHC_Sniper_02", },
+};
+
+// ---------- PHC Recon 01 (Hermes) Unit ----------
+export UnitTemplate UNT_PHC_Recon_01 =
+{
+    .templateHandle = "UNT_PHC_Recon_01",
+    .formationTemplateID = "AADiamond", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eSupport,
+    .oreCost    = 175,
+    .gasCost    = 0,
+    .timeCost   = 25,
+    .logCost    = 1,
+    .elements   = { "ELM_PHC_Recon_01", "ELM_PHC_Recon_01", "ELM_PHC_Recon_01", },
+};
+
+
+// ---------- PHC AA 01 (Mech Apollo) Unit ----------
+export UnitTemplate UNT_PHC_AntiAir_01 =
+{
+    .templateHandle = "UNT_PHC_AntiAir_01",
+    .formationTemplateID = "AADiamond", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eAntiAir,
+    .oreCost    = 275,
+    .gasCost    = 0,
+    .timeCost   = 25,
+    .logCost    = 1,
+    .elements   = { "ELM_PHC_AntiAir_01", "ELM_PHC_AntiAir_01", "ELM_PHC_AntiAir_01", },
+};
+
+// ---------- PHC Commander 01 Unit (Acolyte) ----------
+export UnitTemplate UNT_PHC_Commander_01 =
+{
+    .templateHandle = "UNT_PHC_Commander_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eAntiAir | UnitRoleFlags.eSupport,
+    .oreCost    = 400,
+    .gasCost    = 400,
+    .timeCost   = 60,
+    .logCost    = 5,
+    .elements   = { "ELM_PHC_Commander_01", },
+};
+
+// ---------- PHC Commander 02 Unit (Commander) ----------
+export UnitTemplate UNT_PHC_Commander_02 =
+{
+    .templateHandle = "UNT_PHC_Commander_02",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eAntiAir | UnitRoleFlags.eSupport | UnitRoleFlags.eArmor,
+    .templateFlags = UnitTemplateFlags.unbuildable,
+    .oreCost    = 750,
+    .gasCost    = 750,
+    .timeCost   = 100,
+    .logCost    = 0,
+    .elements   = { "ELM_PHC_Commander_02", },
+
+	.OrderMoveAudioCue     		= { "PHC_Commander_02_Move_01", "PHC_Commander_02_Move_02", "PHC_Commander_02_Move_03", },
+    .OrderAttackAudioCue  		= { "PHC_Commander_02_Attack_01", "PHC_Commander_02_Attack_02", "PHC_Commander_02_Attack_03", "PHC_Commander_02_Attack_04", "PHC_Commander_02_Attack_05", },
+    .OrderPatrolAudioCue   		= { "PHC_Commander_02_Patrol_01", "PHC_Commander_02_Patrol_02", "PHC_Commander_02_Patrol_03", },
+    .OrderStopAudioCue    		= { "PHC_Commander_02_Stop_01", "PHC_Commander_02_Stop_02", "PHC_Commander_02_Stop_03", },
+    .OrderInvalidAudioCue  		= { "PHC_Commander_02_Invalid_01", "PHC_Commander_02_Invalid_02", "PHC_Commander_02_Invalid_03", },
+    .SelectAudioCue        		= { "PHC_Commander_02_Select_01", "PHC_Commander_02_Select_02", "PHC_Commander_02_Select_03", },
+};
+
+// ---------- PHC Commander 03 Unit (Giant / Super Commander) ----------
+export UnitTemplate UNT_PHC_Commander_03 =
+{
+    .templateHandle = "UNT_PHC_Commander_03",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eAntiAir,
+    .templateFlags = UnitTemplateFlags.spawnOnFactory | UnitTemplateFlags.eSuper,
+    .oreCost    = 2100,
+    .gasCost    = 2700,
+    .timeCost   = 330,
+    .logCost    = 10,
+    .elements   = { "ELM_PHC_Commander_03", },
+};
+
+// ---------- PHC Gunship 01 (Talos) Unit ----------
+export UnitTemplate UNT_PHC_Gunship_01 =
+{
+    .templateHandle = "UNT_PHC_Gunship_01",
+    .formationTemplateID = "GunshipWedge", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eAircraft,
+    .oreCost    = 225,
+    .gasCost    = 300,
+    .timeCost   = 45,
+    .logCost    = 2,
+    .elements   = { "ELM_PHC_Gunship_01", "ELM_PHC_Gunship_01", "ELM_PHC_Gunship_01", },
+};
+
+
+// ---------- PHC Bomber 01 (Hades) Unit ----------
+export UnitTemplate UNT_PHC_Bomber_01 =
+{
+    .templateHandle = "UNT_PHC_Bomber_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eAircraft,
+    .oreCost    = 200,
+    .gasCost    = 675,
+    .timeCost   = 70,
+    .logCost    = 3,
+    .elements   = { "ELM_PHC_Bomber_01", },
+};
+
+
+// ---------- PHC Airship 01 (Hyperion) Unit ----------
+export UnitTemplate UNT_PHC_Airship_01 =
+{
+    .templateHandle = "UNT_PHC_Airship_01",
+    .formationTemplateID = "Solo", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eAircraft | UnitRoleFlags.eHeavy,
+    .templateFlags = UnitTemplateFlags.spawnOnFactory | UnitTemplateFlags.eSuper,
+    .oreCost    = 1100,
+    .gasCost    = 2100,
+    .timeCost   = 240,
+    .logCost    = 10,
+    .elements   =
+    {
+        "ELM_PHC_Airship_01"
+    },
+	
+	.OrderMoveAudioCue     		= { "PHC_Airship_01_Move_01", "PHC_Airship_01_Move_02", "PHC_Airship_01_Move_03", "PHC_Airship_01_Move_04", },
+    .OrderAttackAudioCue  		= { "PHC_Airship_01_Attack_01", "PHC_Airship_01_Attack_02", "PHC_Airship_01_Attack_03", "PHC_Airship_01_Attack_04", "PHC_Airship_01_Attack_05", },
+    .OrderPatrolAudioCue   		= { "PHC_Airship_01_Patrol_01", "PHC_Airship_01_Patrol_02", "PHC_Airship_01_Patrol_03", },
+    .OrderStopAudioCue    		= { "PHC_Airship_01_Stop_01", "PHC_Airship_01_Stop_02", "PHC_Airship_01_Stop_03", },
+    .OrderInvalidAudioCue  		= { "PHC_Airship_01_Invalid_01", "PHC_Airship_01_Invalid_02", "PHC_Airship_01_Invalid_03", },
+    .SelectAudioCue        		= { "PHC_Airship_01_Select_01", "PHC_Airship_01_Select_02", "PHC_Airship_01_Select_03", },
+};
+
+
+// ---------- PHC Fighter 01 (Fury) Unit ----------
+export UnitTemplate UNT_PHC_Fighter_01 =
+{
+    .templateHandle = "UNT_PHC_Fighter_01",
+    .formationTemplateID = "GunshipWedge", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eAircraft | UnitRoleFlags.eAntiAir,
+    .oreCost    = 225,
+    .gasCost    = 150,
+    .timeCost   = 45,
+    .logCost    = 2,
+    .elements   = { "ELM_PHC_Fighter_01", "ELM_PHC_Fighter_01", "ELM_PHC_Fighter_01", },
+};
+
+// ---------- PHC Worker 01 Unit ----------
+export UnitTemplate UNT_PHC_Worker_01 =
+{
+    .templateHandle = "UNT_PHC_Worker_01",
+    .formationTemplateID = "Worker", // local formation of elements within the Unit
+    .roleFlags  = UnitRoleFlags.eWorker,
+    .timeCost   = 45,
+    .logCost    = 0,
+    .elements   = { "ELM_PHC_Worker_01"},
+};
+
+// ---------- PHC Scout 01 (Recon Scout) Unit ----------
+export UnitTemplate UNT_PHC_Scout_01 =
+{
+    .templateHandle = "UNT_PHC_Scout_01",
+    .roleFlags  = UnitRoleFlags.eAircraft | UnitRoleFlags.eSupport,
+    .formationTemplateID = "Solo",
+    .oreCost    = 50,
+    .gasCost    = 0,
+    .timeCost   = 20,
+    .logCost    = 1,
+    .elements   = { "ELM_PHC_Scout_01" },
+};

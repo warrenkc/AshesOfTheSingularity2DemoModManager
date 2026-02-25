@@ -1,0 +1,196 @@
+================================================================
+  AOTS II Mod Manager — Instructions & Documentation
+  Game: Ashes of the Singularity II (Demo)
+================================================================
+
+----------------------------------------------------------------
+QUICK START
+----------------------------------------------------------------
+1. Double-click "AOTS Mod Manager" on your Desktop.
+
+2. The app shows all mods in the "mods\" folder.
+
+3. Click "Enable" on any mod to activate it.
+   Click "Disable" to restore the original game files.
+
+4. Launch the game normally after enabling/disabling mods.
+
+
+----------------------------------------------------------------
+FOLDER STRUCTURE
+----------------------------------------------------------------
+Mod-App-For-AOTS\
+  mod_manager.exe         - Standalone app (no Python needed)
+  mod_manager.py          - Python source (same app)
+  DOCUMENTATION.txt       - This file
+  active_mods.json        - Tracks which mods are currently on
+                            (auto-created, do not edit manually)
+  mods\                   - Drop new mods here
+    no_supply_limit\      - Mod: removes unit supply costs
+      mod.json
+    no_building_limits\   - Mod: removes building slot limits
+      mod.json
+      Buildings_UEF.zdata
+      Buildings_PHC.zdata
+  backups\                - Original game files are saved here
+                            the first time each mod is enabled
+                            (auto-created, do not delete)
+
+
+----------------------------------------------------------------
+INCLUDED MODS
+----------------------------------------------------------------
+1. No Supply Limit
+   Removes the logistics (supply) cost from all units and
+   buildings so you can build unlimited armies.
+   Affects:
+     Units.zdata, Units_UEF.zdata, Units_PHC.zdata,
+     Units_NEU.zdata, Buildings_UEF.zdata, Buildings_PHC.zdata
+
+2. No Building Limits
+   Removes the building slot requirement so you can place
+   any building anywhere without restriction.
+   Affects:
+     Buildings_UEF.zdata, Buildings_PHC.zdata
+   Credit: Original mod files from the AOTS modding community.
+
+⚠ CONFLICT WARNING:
+  "No Supply Limit" and "No Building Limits" both modify
+  Buildings_UEF.zdata and Buildings_PHC.zdata.
+  Do not enable both at the same time — whichever was
+  activated last will overwrite the other's changes.
+
+
+----------------------------------------------------------------
+IS IT SAFE?
+----------------------------------------------------------------
+- These mods are for SINGLE PLAYER only.
+- Before any mod is applied, the app backs up the original
+  game files to the "backups\" folder automatically.
+- Disabling a mod fully restores those original files.
+- If anything goes wrong, use Steam → Right-click game →
+  Properties → Installed Files → Verify integrity to
+  redownload the originals from Steam.
+
+
+----------------------------------------------------------------
+HOW TO CREATE A NEW MOD
+----------------------------------------------------------------
+1. Create a new subfolder inside "mods\":
+     mods\my_mod_name\
+
+2. Create a "mod.json" file inside that folder.
+   (See the template and patch type reference below.)
+
+3. Click "Refresh" in the app — your mod appears in the list.
+
+4. Optionally include modified game files in the mod folder
+   if you are using the "copy" patch type.
+
+
+----------------------------------------------------------------
+MOD.JSON TEMPLATE
+----------------------------------------------------------------
+{
+  "id":          "unique_mod_id",
+  "name":        "Display Name",
+  "description": "Short description shown in the app.",
+  "version":     "1.0",
+  "patches": [
+    { ... patch 1 ... },
+    { ... patch 2 ... }
+  ]
+}
+
+  id          Must be unique, no spaces (use underscores).
+  name        Shown in bold in the mod list.
+  description Shown in grey below the name.
+  version     Optional, shown next to the name.
+  patches     List of changes to apply. See types below.
+
+
+----------------------------------------------------------------
+PATCH TYPE REFERENCE
+----------------------------------------------------------------
+
+── TYPE: regex ──────────────────────────────────────────────
+Find and replace using a regular expression. Best for
+changing numeric values or flags scattered through a file.
+
+  {
+    "file":        "Units_UEF.zdata",
+    "type":        "regex",
+    "pattern":     "(\\.logCost\\s*=\\s*)[1-9]\\d*",
+    "replacement": "\\g<1>0"
+  }
+
+  file        Filename inside the game's GameCore folder.
+  pattern     Python regular expression to search for.
+  replacement Replacement string.
+              Use \\g<1> for capture group 1, \\g<2> for 2, etc.
+  Note: In JSON, every backslash must be doubled (\ → \\).
+
+
+── TYPE: replace ────────────────────────────────────────────
+Simple plain-text find and replace. Use when you need an
+exact match and don't want to deal with regex.
+
+  {
+    "file": "Units_UEF.zdata",
+    "type": "replace",
+    "old":  ".logCost    = 10,",
+    "new":  ".logCost    = 0,"
+  }
+
+
+── TYPE: copy ───────────────────────────────────────────────
+Replace a game file entirely with a pre-edited file stored
+inside the mod folder. Use when you have a ready-made file.
+
+  {
+    "file":   "Buildings_UEF.zdata",
+    "type":   "copy",
+    "source": "Buildings_UEF.zdata"
+  }
+
+  file        Filename to replace in the game's GameCore folder.
+  source      Filename inside your mod folder to copy from.
+              Usually the same name as "file".
+
+
+----------------------------------------------------------------
+GAME FILE LOCATION
+----------------------------------------------------------------
+D:\SteamLibrary\steamapps\common\
+  Ashes of the Singularity II Demo\Assets\GameCore\
+
+Key files:
+  Units.zdata          Neutral/shared unit definitions
+  Units_UEF.zdata      UEF faction unit definitions
+  Units_PHC.zdata      PHC faction unit definitions
+  Units_NEU.zdata      Neutral unit definitions
+  Buildings.zdata      Shared building definitions
+  Buildings_UEF.zdata  UEF faction building definitions
+  Buildings_PHC.zdata  PHC faction building definitions
+  GameCoreData.zdata   Master file index (do not modify)
+  Technologies\        Tech tree and research definitions
+
+
+----------------------------------------------------------------
+GAME FILE FORMAT (.zdata)
+----------------------------------------------------------------
+These are plain text files using a custom schema syntax.
+They are NOT binary or compressed — open them with any
+text editor such as Notepad, Notepad++, or VS Code.
+
+Common moddable fields:
+  .oreCost    = 300    Ore (Durantium) cost to build
+  .gasCost    = 150    Gas (Elerite) cost to build
+  .timeCost   = 30     Build time in seconds
+  .logCost    = 2      Supply/logistics cost (0 = unlimited)
+  .maxHps     = 5000   Unit hit points
+  .Flags      = BuildingFlags.ignoresSlotLimit
+                       Removes building placement limits
+
+
+================================================================

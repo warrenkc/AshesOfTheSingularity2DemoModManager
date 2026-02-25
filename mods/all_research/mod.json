@@ -1,0 +1,14 @@
+{
+  "id": "all_research",
+  "name": "Cheaper Research",
+  "description": "Reduces tech tier unlock thresholds to 50% of their original values. Research still works normally but all tech tiers become accessible much sooner.",
+  "version": "2.0",
+  "patches": [
+    {
+      "file": "Technologies/TechRules.zdata",
+      "type": "replace",
+      "old": ".techUnlockThresholds = {\n\t\t100,      // Level 1  (cost: 100)\n\t\t300,      // Level 2  (cost: 200)\n\t\t625,      // Level 3  (cost: 325)\n\t\t1075,     // Level 4  (cost: 450)\n\t\t1650,     // Level 5  (cost: 575)\n\t\t2375,     // Level 6  (cost: 725)\n\t\t3250,     // Level 7  (cost: 875)\n\t\t4275,     // Level 8  (cost: 1025)\n\t\t5475,     // Level 9  (cost: 1200)\n\t\t6850,     // Level 10 (cost: 1375)\n\t\t8400,     // Level 11 (cost: 1550)\n\t\t10150,    // Level 12 (cost: 1750)\n\t\t12100,    // Level 13 (cost: 1950)\n\t\t14250,    // Level 14 (cost: 2150)\n\t\t16600,    // Level 15 (cost: 2350)\n\t\t19150,    // Level 16 (cost: 2550)\n\t\t21900,    // Level 17 (cost: 2750)\n\t\t24850,    // Level 18 (cost: 2950)\n\t\t28000,    // Level 19 (cost: 3150)\n\t\t31350,    // Level 20 (cost: 3350)\n\t\t34900,    // Level 21 (cost: 3550)\n\t\t38650,    // Level 22 (cost: 3750)\n\t\t42600,    // Level 23 (cost: 3950)\n\t\t46750,    // Level 24 (cost: 4150)\n\t\t51100,    // Level 25 (cost: 4350)\n\t\t55650,    // Level 26 (cost: 4550)\n\t\t60400,    // Level 27 (cost: 4750)\n\t\t65350,    // Level 28 (cost: 4950)\n\t\t70500,    // Level 29 (cost: 5150)\n\t\t75850,    // Level 30 (cost: 5350)\n    },",
+      "new": ".techUnlockThresholds = {\n\t\t50,       // Level 1  (cost: 50)\n\t\t150,      // Level 2  (cost: 100)\n\t\t313,      // Level 3  (cost: 163)\n\t\t538,      // Level 4  (cost: 225)\n\t\t825,      // Level 5  (cost: 287)\n\t\t1188,     // Level 6  (cost: 363)\n\t\t1625,     // Level 7  (cost: 437)\n\t\t2138,     // Level 8  (cost: 513)\n\t\t2738,     // Level 9  (cost: 600)\n\t\t3425,     // Level 10 (cost: 687)\n\t\t4200,     // Level 11 (cost: 775)\n\t\t5075,     // Level 12 (cost: 875)\n\t\t6050,     // Level 13 (cost: 975)\n\t\t7125,     // Level 14 (cost: 1075)\n\t\t8300,     // Level 15 (cost: 1175)\n\t\t9575,     // Level 16 (cost: 1275)\n\t\t10950,    // Level 17 (cost: 1375)\n\t\t12425,    // Level 18 (cost: 1475)\n\t\t14000,    // Level 19 (cost: 1575)\n\t\t15675,    // Level 20 (cost: 1675)\n\t\t17450,    // Level 21 (cost: 1775)\n\t\t19325,    // Level 22 (cost: 1875)\n\t\t21300,    // Level 23 (cost: 1975)\n\t\t23375,    // Level 24 (cost: 2075)\n\t\t25550,    // Level 25 (cost: 2175)\n\t\t27825,    // Level 26 (cost: 2275)\n\t\t30200,    // Level 27 (cost: 2375)\n\t\t32675,    // Level 28 (cost: 2475)\n\t\t35250,    // Level 29 (cost: 2575)\n\t\t37925,    // Level 30 (cost: 2675)\n    },"
+    }
+  ]
+}
