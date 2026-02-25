@@ -1,5 +1,0 @@
-Mod for Ashes of the Singularity 2
-I want to develop a mod for the RTS game Ashes of the Singularity 2. It should activate or deactivate mods as needed. Runs on windows.
-Create app here: C:\Users\warrenkc\Documents\Mod-App-For-AOTS
-Look at this folder: D:\SteamLibrary\steamapps\common\Ashes of the Singularity II Demo\Assets\GameCore
-I want to make a simple mod that s2imply removes all the supply limitation so i can make as many units as I want
