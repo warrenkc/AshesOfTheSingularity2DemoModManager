@@ -1,6 +1,7 @@
 # AOTS II Mod Manager
 
 A simple mod manager for **Ashes of the Singularity II** (including the Demo). Enables and disables mods with a single click, automatically backs up original game files, and restores them when you disable a mod.
+![Screenshot](https://files.catbox.moe/nmdh9b.png) "Screenshot")
 
 > **Single-player only.** Do not use mods in multiplayer.
 
